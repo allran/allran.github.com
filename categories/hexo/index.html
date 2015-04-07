@@ -3,29 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>About Octopress | 木头人</title>
+  <title>Category: hexo | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Octopress 简明手册
-
-利用Octopress搭建一个Github博客http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
-
-在线 Markd">
-<meta property="og:type" content="article">
-<meta property="og:title" content="About Octopress">
-<meta property="og:url" content="http://allran.github.io/2013/12/17/2013-12-17-about-octopress/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="木头人">
+<meta property="og:url" content="http://allran.github.io/categories/hexo/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="Octopress 简明手册
-
-利用Octopress搭建一个Github博客http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
-
-在线 Markd">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Octopress">
-<meta name="twitter:description" content="Octopress 简明手册
-
-利用Octopress搭建一个Github博客http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/
-
-在线 Markd">
+<meta name="twitter:title" content="木头人">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -75,94 +63,39 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2013-12-17-about-octopress" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/12/17/2013-12-17-about-octopress/" class="article-date">
-  <time datetime="2013-12-17T01:19:27.000Z" itemprop="datePublished">2013-12-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      About Octopress
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/01/25/2015-01-25-Hexo/" class="archive-article-date">
+  <time datetime="2015-01-24T17:25:48.000Z" itemprop="datePublished">1月 25</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/01/25/2015-01-25-Hexo/">Hexo小结</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Octopress 简明手册</p>
-<ul>
-<li><p>利用Octopress搭建一个Github博客<br><a href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/" target="_blank" rel="external">http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/</a><br><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></p>
-</li>
-<li><p>在线 Markdown 编辑阅读器<a href="http://www.zybuluo.com/mdeditor" target="_blank" rel="external">http://www.zybuluo.com/mdeditor</a><br>想要了解更详细的语法说明，可以参考 <a href="http://www.zybuluo.com/mdeditor?url=http://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Markdown 语法简明手册</a></p>
-</li>
-</ul>
-<p>Octopress常用命令</p>
-<pre><code><span class="comment">//安装Octopress</span>
-$ git clone git:<span class="comment">//github.com/imathis/octopress.git octopress</span>
-$ <span class="keyword">cd</span> octopress    # <span class="keyword">If</span> you <span class="keyword">use</span> RVM, You'll be asked <span class="keyword">if</span> you trust t <span class="keyword">he</span> .rvmrc <span class="keyword">file</span> (say yes).
-$ ruby --<span class="keyword">version</span>  # Should <span class="keyword">report</span> Ruby 1.9.3
-$ gem install bundler
-$ bundle install
-$ rake install
-
-<span class="comment">//将博客部署到GitHub上</span>
-$ rake setup_github_pages
-$ rake <span class="keyword">generate</span>
-$ rake deploy
-$ git add .
-$ git commit -<span class="keyword">m</span> 'Initial source commit'
-$ git push origin source
-
-<span class="comment">//预览通过 http://localhost:4000/</span>
-$ rake new_post[<span class="string">"title"</span>]
-rake preview
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-about-octopress/" data-id="ci86qesha00001eez3r3ve328" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Git资源管理
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2013/12/17/2013-12-17-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">First blog</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
+  
+  
+    </div></section>
+  
 </section>
         
           <aside id="sidebar">
