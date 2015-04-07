@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git资源管理 | 木头人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git资源管理">
+<meta property="og:url" content="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/index.html">
+<meta property="og:site_name" content="木头人">
+<meta property="og:description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git资源管理">
+<meta name="twitter:description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+  
+    <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">木头人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习点滴</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://allran.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-01-15-gitzi-yuan-guan-li" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" class="article-date">
+  <time datetime="2014-01-15T02:42:48.000Z" itemprop="datePublished">2014-01-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git资源管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>关于git的UI操作，个人强烈推荐SourceTree，简洁大方。</p>
+<h3 id="1-_使用_网盘(推荐Dropbox)和SourceTree管理资源">1. 使用 网盘(推荐Dropbox)和SourceTree管理资源</h3><p><a href="https://freshmob.com.au/using-dropbox-as-a-git-repository/" target="_blank" rel="external">示例</a>：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。</span></span><br><span class="line">$ cd ~/Dropbox</span><br><span class="line">$ mkdir -p repos/your-repo-name</span><br><span class="line">$ git init –bare repos/your-repo-name</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/Users/</span>xxxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line"></span><br><span class="line">$ cd ~/ProjectFolder</span><br><span class="line">$ git init .</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/Users/</span>xxxxx<span class="regexp">/ProjectFolder/</span></span><br><span class="line">$ git add .</span><br><span class="line">$ git commit –all -m <span class="string">"Initial commit"</span></span><br><span class="line">$ git remote add dropbox <span class="regexp">/Users/</span>xxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line">$ git push dropbox master</span><br><span class="line"></span><br><span class="line"><span class="comment">//从另一台电脑克隆项目</span></span><br><span class="line">$ cd ~/Projects</span><br><span class="line">$ git clone -o dropbox <span class="regexp">/Users/</span>xxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//提交更新</span></span><br><span class="line">$ git commit –all -m <span class="string">"Changes made!"</span></span><br><span class="line">$ git push dropbox master</span><br><span class="line"></span><br><span class="line"><span class="comment">//拉更新</span></span><br><span class="line">$ git pull dropbox master</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-_使用rhodecode管理项目">2. 使用rhodecode管理项目</h3><p>rhodecode安装页面<br><a href="http://pythonhosted.org/RhodeCode/installation.html" target="_blank" rel="external">http://pythonhosted.org/RhodeCode/installation.html</a></p>
+<p>1、先安装pip<br><a href="http://www.pip-installer.org/en/latest/installing.html" target="_blank" rel="external">http://www.pip-installer.org/en/latest/installing.html</a></p>
+<p>1）下载ez_setup.py<br>(sudo安装)</p>
+<p>2）下载get-pip.py<br>(sudo安装)</p>
+<p>2、用pip安装rhodecode<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install http<span class="variable">s:</span>//rhodecode.<span class="keyword">com</span>/<span class="keyword">dl</span>/latest</span><br><span class="line">sudoojat</span><br></pre></td></tr></table></figure></p>
+<p>3、配置完成，修改production.ini文件</p>
+<p>找到行<code>host = 127.0.0.1</code>，其他人无法访问。修改为<code>http = 127.0.0.1:5000</code></p>
+<p>4、给repository 打开写权限,运行rhodecode<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> paster serve production.ini</span><br></pre></td></tr></table></figure></p>
+<p>然后打开<code>http://localhost:5000</code>配置用户权限等各种操作</p>
+<a id="more"></a>
+<h3 id="Git常用命令(符号约定：[]：可选_&lt;&gt;：必选)">Git常用命令(符号约定：[]：可选　　&lt;&gt;：必选)</h3><p>Git 配置</p>
+<p>git config [—global] user.name <name>　　　　　　　　设置用户名</name></p>
+<p>git config [—global] user.email <email>　　　　　　 　　设置邮箱</email></p>
+<p>git config [—global] core.editor <editor>　　　　　　　　设置编辑器</editor></p>
+<p>git config [—global] github.user <user>　　　　　　 　　设置github帐号名</user></p>
+<p>git config [—global] github.token <token>　　　　　　　 设置github的token</token></p>
+<p>—global是对当前系统用户的全局设置，在～/.gitconfig中。对系统所有用户进行配置，/etc/gitconfig。对当前项目，.git/config</p>
+<p>Git 创建库</p>
+<p>git clone <url>　　　　　　　　　　　　　　　　　　　ssh/http(s)/git三种协议，ssh和https可推送</url></p>
+<p>git init　　　　　　　　　　　　　　　　　　　　　　  初始化Git仓库</p>
+<p>Git 日常操作</p>
+<p>git add <file>　　　　　　　　　　　　　　　  将文件加入index file</file></p>
+<p>git rm [—cached]　　　　　　　　　　　　　   删除，加—cached表示仅从index file中删除文件，即放弃跟踪</p>
+<p>git mv <src> <dest>　　　　　　　　　　　　 移动/更名</dest></src></p>
+<p>git diff —cached/—staged　　　　　　　　　　当前索引与上次提交（有哪些需要commit）</p>
+<p>git diff　　　　　　　　　　　　　　　　　     当前索引与工作目录（有哪些需要add）</p>
+<p>git diff HEAD[^]　　　　　　　　　　　　　　 工作目录与上次提交（当前目录与上次提交有何改变）</p>
+<p>git commit [-a] -m <msg>　　　　　　　　　　提交</msg></p>
+<p>git commit —amend [-m <msg>]　　　　　　　修复上次提交</msg></p>
+<p>git reset HEAD <file>　　　　　　　　　　　  同—mixed，default option</file></p>
+<p>git reset —mixed HEAD　　　　　　　　　　  撤销 commit 和index file,只保留 working tree 的信息</p>
+<p>git reset —hard HEAD[^]　　　　　　　　　　 将 working tree 和 index file 都撤销到以前状态</p>
+<p>git reset —soft HEAD[^]　　　　　　　　　　  只撤销 commit,而保留 working tree 和 index file 的信息</p>
+<p>　　　　　　　　　　　　　　　　　　　　　回复到某个状态。以git reset —soft HEAD为例，commit回退到</p>
+<p>　　　　　　　　　　　　　　　　　　　　　HEAD（相当于无变化），若是HEAD^，则commit回退到HEAD^</p>
+<p>git gc　　　　　　　　　　　　　　　　　　   用垃圾回收机制清除由于 reset 而造成的垃圾代码</p>
+<p>git status　　　　　　　　　　　　　　　　　 显示当前工作目录状态</p>
+<p>git log [-p]　　　　　　　　　　　　　　　　   显示提交历史（many useful options to be learned）</p>
+<p>git branch [branch]　　　　　　　　　　　　   显示/新建分支</p>
+<p>git branch -d/-D　　　　　　　　　　　　　　 删除分支（d表示“在分支合并后删除分支”，D表示无论如何都删除分支）</p>
+<p>git show-branch</p>
+<p>git checkout <branch>　　　　　　　　　　　 切换分支（分支未commit无法切换）</branch></p>
+<p>git merge <branch>　　　　　　　　　　　　  合并分支</branch></p>
+<p>git merge == git pull .</p>
+<p>git show <branch |="" commit="" tag="" etc="">　　　     显示对应对象的信息</branch></p>
+<p>git grep <rep> [object]　　　　　　　　　　　  （在指定对象（历史记录）中）搜索　　　　　　　　</rep></p>
+<p>git cat-file 　　　　　　　　　　　　　　　　   查看数据</p>
+<p>git cat-file &lt;-t | -s | -e | -p | (type)&gt; <object>        type can be one of: blob, tree, commit, tag</object></p>
+<p>git ls-files [—stage]　　　　　　　　　　　　　 show information about files in the index and the working tree（实际是查看索引文件）</p>
+<p>git watchchanged <since>..<until>　　　　　　 显示两个commit（当然也可以是branch）的区别</until></since></p>
+<p>git remote [-v]　　　　　　　　　　　　　　    　　显示远程仓库，加-v选项可显示仓库地址</p>
+<p>git remote add <repo_name> <url>　　　　　  　　添加远程仓库，repo_name为shortname，指代仓库地址</url></repo_name></p>
+<p>git remote rename <old_name> <new_name>  　　更名</new_name></old_name></p>
+<p>git remote rm <repo_name>　　　　　　　　　　  删除远程仓库</repo_name></p>
+<p>git remote show <repo_name>　　　　　　　　　 查看远程仓库信息</repo_name></p>
+<p>git remote fetch <repo_name>　　　　　　　　　  从远程仓库抓取数据（并不合并）</repo_name></p>
+<p>git pull <repo_name> <branch_name>　　　　　　拉去数据并合并到当前分支</branch_name></repo_name></p>
+<p>git push <repo_name> <branch_name>　　　　　 推送指定分支到指定仓库</branch_name></repo_name></p>
+<p>git fetch <repo_name> <branch_name>[:<local_branch_name>]　　　　拉去数据，未合并</local_branch_name></branch_name></repo_name></p>
+<p>Git 标签</p>
+<p>git 标签相关……</p>
+<p>Git 相关环境变量</p>
+<p>GIT_DIR: 如果指定了那么git init将会在GIT_DIR指定的目录下创建版本库</p>
+<p>GIT_OBJECT_DIRECTORY: 用来指示对象存储目录的路径。即原来$GIT_DIR/objects下的文件会置于该变量指定的路径下</p>
+<p>Git 常见变量</p>
+<p>HEAD: 表示最近一次的 commit。</p>
+<p>MERGE_HEAD: 如果是 merge 产生的 commit,那么它表示除 HEAD 之外的另一个父母分支。</p>
+<p>FETCH_HEAD: 使用 git-fetch 获得的 object 和 ref 的信息都存储在这里,这些信息是为日后 git-merge 准备的。</p>
+<p>HEAD^: 表示 HEAD 父母的信息</p>
+<p>HEAD^^: 表示 HEAD 父母的父母的信息</p>
+<p>HEAD~4: 表示 HEAD 上溯四代的信息</p>
+<p>HEAD^1: 表示 HEAD 的第一个父母的信息</p>
+<p>HEAD^2: 表示 HEAD 的第二个父母的信息</p>
+<p>COMMIT_EDITMSG: 最后一次 commit 时的提交信息。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="ci86pky7e000mpoezvyayne0l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/01/26/2014-01-26-lua-design-patterns/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Lua设计模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/12/17/2013-12-17-about-octopress/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About Octopress</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/erlang/">erlang</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/lua/" style="font-size: 10px;">lua</a><a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/04/07/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/07/2015-04-07-rebar/">rebar相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/25/2015-01-25-Hexo/">Hexo小结</a>
+          </li>
+        
+          <li>
+            <a href="/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/">Xcode 环境变量</a>
+          </li>
+        
+          <li>
+            <a href="/2014/01/26/2014-01-26-lua-design-patterns/">Lua设计模式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Allran<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
