@@ -110,12 +110,32 @@ sudo make <span class="keyword">install</span>
 
 <span class="number">4.</span>启动
 ejabberdctl <span class="keyword">start</span>
-ejabberdctl <span class="keyword">status</span></span>
+ejabberdctl <span class="keyword">status</span>
+
+<span class="number">5.</span>新建帐号
+ejabberdctl register admin1 example.org FgT5bk3
+
+然后编辑ejabberd.yml文件
+acl:
+  admin:
+    <span class="keyword">user</span>:
+      - <span class="string">"admin1"</span>: <span class="string">"example.org"</span>
+access:
+  configure:
+    admin: allow
+
+然后重起服务
+ejabberdctl restart
+
+
+<span class="number">5.</span>打开管理后台
+http://localhost:<span class="number">5280</span>/admin/
+用户名:admin1  密码:FgT5bk3</span>
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="ci8ifa2xz00065iezluzcxsdp" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="ci8ii7mx10006umezidl9mk74" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejabberd/">ejabberd</a></li></ul>
@@ -161,7 +181,7 @@ ejabberdctl <span class="keyword">status</span></span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/07/2015-04-07-rebar/" data-id="ci8ifa2y5000b5iez2bi74g0h" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/07/2015-04-07-rebar/" data-id="ci8ii7mx3000bumezn87ejwyl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -207,7 +227,7 @@ ejabberdctl <span class="keyword">status</span></span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/01/25/2015-01-25-Hexo/" data-id="ci8ifa2yc000d5iezxuw6gzjf" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/01/25/2015-01-25-Hexo/" data-id="ci8ii7mx4000dumez7d97xt61" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +279,7 @@ ejabberdctl <span class="keyword">status</span></span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/" data-id="ci8ifa2yk000g5iezraoqdwoc" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/" data-id="ci8ii7mx6000gumez4726cpge" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
@@ -307,7 +327,7 @@ ejabberdctl <span class="keyword">status</span></span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/26/2014-01-26-lua-design-patterns/" data-id="ci8ifa2yr000l5iezhfmfigf1" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/26/2014-01-26-lua-design-patterns/" data-id="ci8ii7mx8000lumez8icsjosr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/">lua</a></li></ul>
@@ -365,7 +385,7 @@ ejabberdctl <span class="keyword">status</span></span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="ci8ifa2yx000q5ieztmjjkfsr" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="ci8ii7mxa000qumezle06kisr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -434,7 +454,7 @@ rake preview
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-about-octopress/" data-id="ci8ifa2v700005iez882k7mff" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-about-octopress/" data-id="ci8ii7mwc0000umez4i5ha13w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -472,7 +492,7 @@ rake preview
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-first-blog/" data-id="ci8ifa2z8000t5iez07p9bl0i" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-first-blog/" data-id="ci8ii7mxd000tumezlwod3d5w" class="article-share-link">Share</a>
       
       
     </footer>
