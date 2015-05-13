@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo小结 | 木头人</title>
+  <title>erlang use | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装12345brew install nodenpm install -g hexohexo initnpm install">
+  <meta name="description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo小结">
-<meta property="og:url" content="http://allran.github.io/2015/01/25/2015-01-25-Hexo/index.html">
+<meta property="og:title" content="erlang use">
+<meta property="og:url" content="http://allran.github.io/2015/05/13/erlang-use/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="安装12345brew install nodenpm install -g hexohexo initnpm install">
+<meta property="og:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+<meta property="og:image" content="../images/2015-05-13 15.30.41.png">
+<meta property="og:image" content="../images/2015-05-13 15.49.26.png">
+<meta property="og:image" content="../images/2015-05-13 15.53.41.png">
+<meta property="og:image" content="../images/2015-05-13 15.50.48.png">
+<meta property="og:image" content="../images/2015-05-13 15.56.26.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo小结">
-<meta name="twitter:description" content="安装12345brew install nodenpm install -g hexohexo initnpm install">
+<meta name="twitter:title" content="erlang use">
+<meta name="twitter:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -65,14 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2015-01-25-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-erlang-use" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/01/25/2015-01-25-Hexo/" class="article-date">
-  <time datetime="2015-01-24T17:25:48.000Z" itemprop="datePublished">2015-01-25</time>
+    <a href="/2015/05/13/erlang-use/" class="article-date">
+  <time datetime="2015-05-12T16:20:11.000Z" itemprop="datePublished">2015-05-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/erlang/">erlang</a>
   </div>
 
   </div>
@@ -83,7 +88,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo小结
+      erlang use
     </h1>
   
 
@@ -91,31 +96,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="安装">安装</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install node</span><br><span class="line"></span><br><span class="line">npm install -g hexo</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+        <h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
 <a id="more"></a>
-<hr>
-<h2 id="命令">命令</h2><p>常用命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postName"</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">"pageName"</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#将.deploy目录部署到GitHub</span></span><br><span class="line">npm update -g hexo  <span class="comment">#更新hexo</span></span><br></pre></td></tr></table></figure></p>
-<p>常用复合命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br><span class="line">hexo server -g</span><br></pre></td></tr></table></figure></p>
-<p>简写：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new  <span class="comment">#写文章</span></span><br><span class="line">hexo g == hexo generate  <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server   <span class="comment">#本地预览</span></span><br><span class="line">hexo d == hexo deploy <span class="comment">#部署 # 可与hexo g合并为 hexo d -g</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="目录介绍">目录介绍</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy</span><br><span class="line">├── public</span><br><span class="line">├── scaffolds</span><br><span class="line">├── scripts</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">├── themes</span><br><span class="line">├── _config.yml</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure>
-<ul>
-<li>.deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
-<li>public：执行hexo generate命令，输出的静态网页内容目录</li>
-<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
-<li>scripts：扩展脚本目录，这里可以自定义一些javascript脚本</li>
-<li>source：文章源码目录，该目录下的markdown和html文件均会被hexo处理&gt; * 。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。<br>_drafts：草稿文章<br>_posts：发布文章</li>
-<li>themes：主题文件目录</li>
-<li>_config.yml：全局配置文件，大多数的设置都在这里</li>
-<li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
-</ul>
-<hr>
+<h2 id="使用InterlliJ工具debug编译">使用InterlliJ工具debug编译</h2><p>1.使用brew安装rebar，然后使用<a href="https://github.com/haitaoyao/rebar-creator" target="_blank" rel="external">rebar-creator</a>创建项目。</p>
+<p>2.在Preferences-&gt;Tools-&gt;External Tools 里面添加额外的rebar编译命令，如图所示：</p>
+<p><img src="../images/2015-05-13 15.30.41.png" alt="这是一张图片"></p>
+<p>3.假如要运行项目入口在echatServer.erl里面的start()函数，如下代码：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">start</span><span class="params">()</span></span>-&gt;</span><br><span class="line">  chat_room:<span class="function"><span class="title">start_link</span><span class="params">()</span></span>,</span><br><span class="line">  chat_acceptor:<span class="function"><span class="title">start</span><span class="params">(<span class="number">3377</span>)</span></span>,</span><br><span class="line">  ok.</span><br></pre></td></tr></table></figure></p>
+<p>我需要在”Edit Configurations”里面添加设置一个“Erlang Application”，如图所示:<br><img src="../images/2015-05-13 15.49.26.png" alt="这是一张图片"></p>
+<p>4.设置相应的断点，如图所示：<br><img src="../images/2015-05-13 15.53.41.png" alt="这是一张图片"></p>
+<p>5.选取start()，然后右键，选择debug，如图所示：<br><img src="../images/2015-05-13 15.50.48.png" alt="这是一张图片"></p>
+<p>6.当运行到相应断点代码，会出现debug对应信息，如图所示:<br><img src="../images/2015-05-13 15.56.26.png" alt="这是一张图片"></p>
+<p>以上就是使用Interllij编译debug时的方法。（在网上，一直没有找到对应的相关文章，所以自己记录一个，方便大家）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/01/25/2015-01-25-Hexo/" data-id="ci9mggyz8000g79ez2pg86gx6" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="ci9mggyys000179ezp1ljgkbj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,19 +120,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/07/2015-04-07-rebar/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          rebar相关
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/05/12/InterlliJ-Use/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Xcode 环境变量</div>
+      <div class="article-nav-title">InterlliJ Use</div>
     </a>
   
 </nav>
