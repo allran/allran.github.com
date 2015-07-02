@@ -6,17 +6,18 @@
   <title>Git资源管理 | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
-1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：1//&amp;#21021;&amp;#22987;&amp;#21270;&amp;#19968;&amp;#20010;&amp;#32431;&amp;#20179;&amp;#24211;&amp;#65292;&amp;#20316;&amp;#20026;&amp;#26381;&amp;#21153;&amp;#22120;&amp;#25176;&amp;#3164">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git资源管理">
-<meta property="og:url" content="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/index.html">
+<meta property="og:url" content="www.qulunping.com/2014/01/15/2014-01-15-gitzi-yuan-guan-li/index.html">
 <meta property="og:site_name" content="木头人">
 <meta property="og:description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
-1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：1//&amp;#21021;&amp;#22987;&amp;#21270;&amp;#19968;&amp;#20010;&amp;#32431;&amp;#20179;&amp;#24211;&amp;#65292;&amp;#20316;&amp;#20026;&amp;#26381;&amp;#21153;&amp;#22120;&amp;#25176;&amp;#3164">
+<meta property="og:updated_time" content="2014-01-21T15:55:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git资源管理">
 <meta name="twitter:description" content="关于git的UI操作，个人强烈推荐SourceTree，简洁大方。
-1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：123456789101112131415161718192021222324//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。$ cd ~/Dropbox$ mkdir -p">
+1. 使用 网盘(推荐Dropbox)和SourceTree管理资源示例：1//&amp;#21021;&amp;#22987;&amp;#21270;&amp;#19968;&amp;#20010;&amp;#32431;&amp;#20179;&amp;#24211;&amp;#65292;&amp;#20316;&amp;#20026;&amp;#26381;&amp;#21153;&amp;#22120;&amp;#25176;&amp;#3164">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -62,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://allran.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.qulunping.com"></form>
       </div>
     </div>
   </div>
@@ -96,15 +97,15 @@
       
         <hr>
 <p>关于git的UI操作，个人强烈推荐SourceTree，简洁大方。</p>
-<h3 id="1-_使用_网盘(推荐Dropbox)和SourceTree管理资源">1. 使用 网盘(推荐Dropbox)和SourceTree管理资源</h3><p><a href="https://freshmob.com.au/using-dropbox-as-a-git-repository/" target="_blank" rel="external">示例</a>：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化一个纯仓库，作为服务器托管的项目文件夹，用git --bare init初始化，而本地工作文件夹用git init初始化。</span></span><br><span class="line">$ cd ~/Dropbox</span><br><span class="line">$ mkdir -p repos/your-repo-name</span><br><span class="line">$ git init –bare repos/your-repo-name</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/Users/</span>xxxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line"></span><br><span class="line">$ cd ~/ProjectFolder</span><br><span class="line">$ git init .</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> <span class="regexp">/Users/</span>xxxxx<span class="regexp">/ProjectFolder/</span></span><br><span class="line">$ git add .</span><br><span class="line">$ git commit –all -m <span class="string">"Initial commit"</span></span><br><span class="line">$ git remote add dropbox <span class="regexp">/Users/</span>xxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line">$ git push dropbox master</span><br><span class="line"></span><br><span class="line"><span class="comment">//从另一台电脑克隆项目</span></span><br><span class="line">$ cd ~/Projects</span><br><span class="line">$ git clone -o dropbox <span class="regexp">/Users/</span>xxxxx<span class="regexp">/Dropbox/</span>repos<span class="regexp">/your-repo-name/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//提交更新</span></span><br><span class="line">$ git commit –all -m <span class="string">"Changes made!"</span></span><br><span class="line">$ git push dropbox master</span><br><span class="line"></span><br><span class="line"><span class="comment">//拉更新</span></span><br><span class="line">$ git pull dropbox master</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-_使用_网盘(推荐Dropbox)和SourceTree管理资源">1. 使用 网盘(推荐Dropbox)和SourceTree管理资源</h3><p><a href="https://freshmob.com.au/using-dropbox-as-a-git-repository/" target="_blank" rel="external">示例</a>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//&#21021;&#22987;&#21270;&#19968;&#20010;&#32431;&#20179;&#24211;&#65292;&#20316;&#20026;&#26381;&#21153;&#22120;&#25176;&#31649;&#30340;&#39033;&#30446;&#25991;&#20214;&#22841;&#65292;&#29992;git --bare init&#21021;&#22987;&#21270;&#65292;&#32780;&#26412;&#22320;&#24037;&#20316;&#25991;&#20214;&#22841;&#29992;git init&#21021;&#22987;&#21270;&#12290;&#10;$ cd ~/Dropbox&#10;$ mkdir -p repos/your-repo-name&#10;$ git init &#8211;bare repos/your-repo-name&#10;Initialized empty Git repository in /Users/xxxxxx/Dropbox/repos/your-repo-name/&#10;&#10;$ cd ~/ProjectFolder&#10;$ git init .&#10;Initialized empty Git repository in /Users/xxxxx/ProjectFolder/&#10;$ git add .&#10;$ git commit &#8211;all -m &#34;Initial commit&#34;&#10;$ git remote add dropbox /Users/xxxxx/Dropbox/repos/your-repo-name/&#10;$ git push dropbox master&#10;&#10;//&#20174;&#21478;&#19968;&#21488;&#30005;&#33041;&#20811;&#38534;&#39033;&#30446;&#10;$ cd ~/Projects&#10;$ git clone -o dropbox /Users/xxxxx/Dropbox/repos/your-repo-name/&#10;&#10;//&#25552;&#20132;&#26356;&#26032;&#10;$ git commit &#8211;all -m &#34;Changes made!&#34;&#10;$ git push dropbox master&#10;&#10;//&#25289;&#26356;&#26032;&#10;$ git pull dropbox master</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-_使用rhodecode管理项目">2. 使用rhodecode管理项目</h3><p>rhodecode安装页面<br><a href="http://pythonhosted.org/RhodeCode/installation.html" target="_blank" rel="external">http://pythonhosted.org/RhodeCode/installation.html</a></p>
 <p>1、先安装pip<br><a href="http://www.pip-installer.org/en/latest/installing.html" target="_blank" rel="external">http://www.pip-installer.org/en/latest/installing.html</a></p>
 <p>1）下载ez_setup.py<br>(sudo安装)</p>
 <p>2）下载get-pip.py<br>(sudo安装)</p>
-<p>2、用pip安装rhodecode<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install http<span class="variable">s:</span>//rhodecode.<span class="keyword">com</span>/<span class="keyword">dl</span>/latest</span><br><span class="line">sudoojat</span><br></pre></td></tr></table></figure></p>
+<p>2、用pip安装rhodecode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install https://rhodecode.com/dl/latest&#10;sudoojat</span><br></pre></td></tr></table></figure></p>
 <p>3、配置完成，修改production.ini文件</p>
 <p>找到行<code>host = 127.0.0.1</code>，其他人无法访问。修改为<code>http = 127.0.0.1:5000</code></p>
-<p>4、给repository 打开写权限,运行rhodecode<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> paster serve production.ini</span><br></pre></td></tr></table></figure></p>
+<p>4、给repository 打开写权限,运行rhodecode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo paster serve production.ini</span><br></pre></td></tr></table></figure></p>
 <p>然后打开<code>http://localhost:5000</code>配置用户权限等各种操作</p>
 <a id="more"></a>
 <h3 id="Git常用命令(符号约定：[]：可选_&lt;&gt;：必选)">Git常用命令(符号约定：[]：可选　　&lt;&gt;：必选)</h3><p>Git 配置</p>
@@ -175,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="ci9xkb5lg000ur2ezt1k3lo59" class="article-share-link">Share</a>
+      <a data-url="www.qulunping.com/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="cibixpqn3000x5zezi9fccg8r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -206,6 +207,9 @@
   
 </article>
 
+
+
+
 </section>
         
           <aside id="sidebar">
@@ -232,7 +236,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/UI/" style="font-size: 10px;">UI</a><a href="/tags/ejabberd/" style="font-size: 10px;">ejabberd</a><a href="/tags/git/" style="font-size: 20px;">git</a><a href="/tags/lua/" style="font-size: 10px;">lua</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
+      <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/ejabberd/" style="font-size: 10px;">ejabberd</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
     </div>
   </div>
 
@@ -241,7 +245,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -253,23 +257,23 @@
       <ul>
         
           <li>
+            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/26/CentOS搭建VPN/">CentOS搭建VPN</a>
+          </li>
+        
+          <li>
             <a href="/2015/05/13/erlang-use/">erlang use</a>
           </li>
         
           <li>
             <a href="/2015/05/12/InterlliJ-Use/">InterlliJ Use</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/05/UI-Size/">UI Size</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/16/ejabberd-Modules-development/">ejabberd Modules development</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/15/ejabberd-install/">ejabberd install</a>
           </li>
         
       </ul>
