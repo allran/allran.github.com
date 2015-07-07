@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>erlang use | 木头人</title>
+  <title>Mysql相关 | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+  <meta name="description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
 <meta property="og:type" content="article">
-<meta property="og:title" content="erlang use">
-<meta property="og:url" content="http://allran.github.io/2015/05/13/erlang-use/index.html">
+<meta property="og:title" content="Mysql相关">
+<meta property="og:url" content="http://allran.github.io/2015/07/06/Mysql相关/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.30.41.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.49.26.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.53.41.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.50.48.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.56.26.png">
-<meta property="og:updated_time" content="2015-05-21T02:30:17.000Z">
+<meta property="og:description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
+<meta property="og:updated_time" content="2015-07-07T05:52:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="erlang use">
-<meta name="twitter:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+<meta name="twitter:title" content="Mysql相关">
+<meta name="twitter:description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -71,16 +66,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-erlang-use" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Mysql相关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/05/13/erlang-use/" class="article-date">
-  <time datetime="2015-05-12T16:20:11.000Z" itemprop="datePublished">2015-05-13</time>
+    <a href="/2015/07/06/Mysql相关/" class="article-date">
+  <time datetime="2015-07-06T02:15:01.000Z" itemprop="datePublished">2015-07-06</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/erlang/">erlang</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -89,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      erlang use
+      Mysql相关
     </h1>
   
 
@@ -97,22 +88,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
+        <h2 id="linux下mysql的root密码忘记解决方法">linux下mysql的root密码忘记解决方法</h2><p>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。<br>因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的<br>状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对<br>外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全<br>状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。</p>
 <a id="more"></a>
-<h2 id="使用InterlliJ工具debug编译">使用InterlliJ工具debug编译</h2><p>1.使用brew安装rebar，然后使用<a href="https://github.com/haitaoyao/rebar-creator" target="_blank" rel="external">rebar-creator</a>创建项目。</p>
-<p>2.在Preferences-&gt;Tools-&gt;External Tools 里面添加额外的rebar编译命令，如图所示：</p>
-<p><img src="/images/2015-05-13 15.30.41.png" alt="这是一张图片"></p>
-<p>3.假如要运行项目入口在echatServer.erl里面的start()函数，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start()-&#62;&#10;  chat_room:start_link(),&#10;  chat_acceptor:start(3377),&#10;  ok.</span><br></pre></td></tr></table></figure></p>
-<p>我需要在”Edit Configurations”里面添加设置一个“Erlang Application”，如图所示:<br><img src="/images/2015-05-13 15.49.26.png" alt="这是一张图片"></p>
-<p>4.设置相应的断点，如图所示：<br><img src="/images/2015-05-13 15.53.41.png" alt="这是一张图片"></p>
-<p>5.选取start()，然后右键，选择debug，如图所示：<br><img src="/images/2015-05-13 15.50.48.png" alt="这是一张图片"></p>
-<p>6.当运行到相应断点代码，会出现debug对应信息，如图所示:<br><img src="/images/2015-05-13 15.56.26.png" alt="这是一张图片"></p>
-<p>以上就是使用Interllij编译debug时的方法。（在网上，一直没有找到对应的相关文章，所以自己记录一个，方便大家）</p>
+<p>2．修改MySQL的登录设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
+<p>在[mysqld]的段中加上一句：skip-grant-tables<br>例如：<br>[mysqld]<br>datadir=/var/lib/mysql<br>socket=/var/lib/mysql/mysql.sock<br>skip-grant-tables<br>保存并且退出vi。 </p>
+<p>3．重新启动mysqld<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysqld restart&#10;``` &#10;Stopping MySQL: [ OK ] &#10;Starting MySQL: [ OK ] &#10;&#10;4&#65294;&#30331;&#24405;&#24182;&#20462;&#25913;MySQL&#30340;root&#23494;&#30721;</span><br></pre></td></tr></table></figure></p>
+<p>/usr/bin/mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to the MySQL monitor. Commands end with ; or \g. &#10;Your MySQL connection id is 3 to server version: 3.23.56 &#10;Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the buffer. &#10;mysql&#62; USE mysql ; &#10;Reading table information for completion of table and column names &#10;You can turn off this feature to get a quicker startup with -A &#10;Database changed &#10;mysql&#62; UPDATE user SET Password = password ( &#39;new-password&#39; ) WHERE User = &#39;root&#39; ; &#10;Query OK, 0 rows affected (0.00 sec) &#10;Rows matched: 2 Changed: 0 Warnings: 0 &#10;mysql&#62; flush privileges ; &#10;Query OK, 0 rows affected (0.01 sec) &#10;mysql&#62; quit &#10;Bye &#10;&#10;5&#65294;&#23558;MySQL&#30340;&#30331;&#24405;&#35774;&#32622;&#20462;&#25913;&#22238;&#26469;&#10;``` &#10;vi /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
+<p>将刚才在[mysqld]的段中加上的skip-grant-tables删除<br>保存并且退出vi。 </p>
+<p>6．重新启动mysqld<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysqld restart</span><br></pre></td></tr></table></figure></p>
+<p>Stopping MySQL: [ OK ]<br>Starting MySQL: [ OK ]</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="cibssvmru0008qjez9ccq9l0c" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/07/06/Mysql相关/" data-id="cibssvms2000lqjezm1x6wgbj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,19 +110,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/05/26/CentOS搭建VPN/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/07/07/linux常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          CentOS搭建VPN
+          linux常用命令
         
       </div>
     </a>
   
   
-    <a href="/2015/05/12/InterlliJ-Use/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/06/08/关于Markdown/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">InterlliJ Use</div>
+      <div class="article-nav-title">关于Markdown</div>
     </a>
   
 </nav>

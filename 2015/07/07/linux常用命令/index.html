@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux常用命令 | 木头人</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装关机 (系统的关机、重启以及登出 )shutdown -h now 关闭系统(1)init 0 关闭系统(2)telinit 0 关闭系统(3)shutdown -h hours:minutes &amp;amp; 按预定时间关闭系统shutdown -c 取消按预定时间关闭系统shutdown -r now 重启(1)reboot 重启(2)logout 注销">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="http://allran.github.io/2015/07/07/linux常用命令/index.html">
+<meta property="og:site_name" content="木头人">
+<meta property="og:description" content="安装关机 (系统的关机、重启以及登出 )shutdown -h now 关闭系统(1)init 0 关闭系统(2)telinit 0 关闭系统(3)shutdown -h hours:minutes &amp;amp; 按预定时间关闭系统shutdown -c 取消按预定时间关闭系统shutdown -r now 重启(1)reboot 重启(2)logout 注销">
+<meta property="og:updated_time" content="2015-07-07T05:51:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="安装关机 (系统的关机、重启以及登出 )shutdown -h now 关闭系统(1)init 0 关闭系统(2)telinit 0 关闭系统(3)shutdown -h hours:minutes &amp;amp; 按预定时间关闭系统shutdown -c 取消按预定时间关闭系统shutdown -r now 重启(1)reboot 重启(2)logout 注销">
+  
+    <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">木头人</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">记录学习点滴</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/About">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://allran.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linux常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/07/linux常用命令/" class="article-date">
+  <time datetime="2015-07-07T03:37:19.000Z" itemprop="datePublished">2015-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h6 id="安装">安装</h6><p>关机 (系统的关机、重启以及登出 )<br>shutdown -h now 关闭系统(1)<br>init 0 关闭系统(2)<br>telinit 0 关闭系统(3)<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启(1)<br>reboot 重启(2)<br>logout 注销 </p>
+<a id="more"></a>
+<h6 id="文件和目录">文件和目录</h6><p>cd /home 进入 ‘/ home’ 目录’<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd 进入个人的主目录<br>cd ~user1 进入个人的主目录<br>cd - 返回上次所在的目录<br>pwd 显示工作路径<br>ls 查看目录中的文件<br>ls -F 查看目录中的文件<br>ls -l 显示文件和目录的详细资料<br>ls -a 显示隐藏文件<br>ls <em>[0-9]</em> 显示包含数字的文件名和目录名<br>tree 显示文件和目录由根目录开始的树形结构(1)<br>lstree 显示文件和目录由根目录开始的树形结构(2)<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>rm -f file1 删除一个叫做 ‘file1’ 的文件’<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’<br>mv dir1 new_dir 重命名/移动 一个目录<br>cp file1 file2 复制一个文件<br>cp dir/* . 复制一个目录下的所有文件到当前工作目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录<br>cp -a dir1 dir2 复制一个目录<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接<br>ln file1 lnk1 创建一个指向文件或目录的物理链接<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </p>
+<h6 id="文件搜索">文件搜索</h6><p>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录<br>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录<br>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中搜索带有’.bin’ 结尾的文件<br>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件<br>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件<br>find / -name *.rpm -exec chmod 755 ‘{}’ \; 搜索以 ‘.rpm’ 结尾的文件并定义其权限<br>find / -xdev -name *.rpm 搜索以 ‘.rpm’ 结尾的文件，忽略光驱、捷盘等可移动设备<br>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令<br>whereis halt 显示一个二进制文件、源码或man的位置<br>which halt 显示一个二进制文件或可执行文件的完整路径 </p>
+<h6 id="查看文件内容">查看文件内容</h6><p>cat file1 从第一个字节开始正向查看文件的内容<br>tac file1 从最后一行开始反向查看一个文件的内容<br>more file1 查看一个长文件的内容<br>less file1 类似于 ‘more’ 命令，但是它允许在文件中和正向操作一样的反向操作<br>head -2 file1 查看一个文件的前两行<br>tail -2 file1 查看一个文件的最后两行<br>tail -f /var/log/messages 实时查看被添加到一个文件中的内容 </p>
+<h6 id="文本处理">文本处理</h6><p>cat file1 file2 … | command &lt;&gt; file1_in.txt_or_file1_out.txt general syntax for text manipulation using PIPE, STDIN and STDOUT<br>cat file1 | command( sed, grep, awk, grep, etc…) &gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中<br>cat file1 | command( sed, grep, awk, grep, etc…) &gt;&gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中<br>grep Aug /var/log/messages 在文件 ‘/var/log/messages’中查找关键词”Aug”<br>grep ^Aug /var/log/messages 在文件 ‘/var/log/messages’中查找以”Aug”开始的词汇<br>grep [0-9] /var/log/messages 选择 ‘/var/log/messages’ 文件中所有包含数字的行<br>grep Aug -R /var/log/<em> 在目录 ‘/var/log’ 及随后的目录中搜索字符串”Aug”<br>sed ‘s/stringa1/stringa2/g’ example.txt 将example.txt文件中的 “string1” 替换成 “string2”<br>sed ‘/^$/d’ example.txt 从example.txt文件中删除所有空白行<br>sed ‘/ </em>#/d; /^$/d’ example.txt 从example.txt文件中删除所有注释和空白行<br>echo ‘esempio’ | tr ‘[:lower:]’ ‘[:upper:]’ 合并上下单元格内容<br>sed -e ‘1d’ result.txt 从文件example.txt 中排除第一行<br>sed -n ‘/stringa1/p’ 查看只包含词汇 “string1”的行<br>sed -e ‘s/ <em>$//‘ example.txt 删除每一行最后的空白字符<br>sed -e ‘s/stringa1//g’ example.txt 从文档中只删除词汇 “string1” 并保留剩余全部<br>sed -n ‘1,5p;5q’ example.txt 查看从第一行到第5行内容<br>sed -n ‘5p;5q’ example.txt 查看第5行<br>sed -e ‘s/00</em>/0/g’ example.txt 用单个零替换多个零<br>cat -n file1 标示文件的行数<br>cat example.txt | awk ‘NR%2==1’ 删除example.txt文件中的所有偶数行<br>echo a b c | awk ‘{print $1}’ 查看一行第一栏<br>echo a b c | awk ‘{print $1,$3}’ 查看一行的第一和第三栏<br>paste file1 file2 合并两个文件或两栏的内容<br>paste -d ‘+’ file1 file2 合并两个文件或两栏的内容，中间用”+”区分<br>sort file1 file2 排序两个文件的内容<br>sort file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)<br>sort file1 file2 | uniq -u 删除交集，留下其他的行<br>sort file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)<br>comm -1 file1 file2 比较两个文件的内容只删除 ‘file1’ 所包含的内容<br>comm -2 file1 file2 比较两个文件的内容只删除 ‘file2’ 所包含的内容<br>comm -3 file1 file2 比较两个文件的内容只删除两个文件共有的部分 </p>
+<h6 id="用户和群组">用户和群组</h6><p>groupadd group_name 创建一个新用户组<br>groupdel group_name 删除一个用户组<br>groupmod -n new_group_name old_group_name 重命名一个用户组<br>useradd -c “Name Surname “ -g admin -d /home/user1 -s /bin/bash user1 创建一个属于 “admin” 用户组的用户<br>useradd user1 创建一个新用户<br>userdel -r user1 删除一个用户 ( ‘-r’ 排除主目录)<br>usermod -c “User FTP” -g system -d /ftp/user1 -s /bin/nologin user1 修改用户属性<br>passwd 修改口令<br>passwd user1 修改一个用户的口令 (只允许root执行)<br>chage -E 2005-12-31 user1 设置用户口令的失效期限<br>pwck 检查 ‘/etc/passwd’ 的文件格式和语法修正以及存在的用户<br>grpck 检查 ‘/etc/passwd’ 的文件格式和语法修正以及存在的群组<br>newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组 </p>
+<h6 id="打包和压缩文件">打包和压缩文件</h6><p>bunzip2 file1.bz2 解压一个叫做 ‘file1.bz2’的文件<br>bzip2 file1 压缩一个叫做 ‘file1’ 的文件<br>gunzip file1.gz 解压一个叫做 ‘file1.gz’的文件<br>gzip file1 压缩一个叫做 ‘file1’的文件<br>gzip -9 file1 最大程度压缩<br>rar a file1.rar test_file 创建一个叫做 ‘file1.rar’ 的包<br>rar a file1.rar file1 file2 dir1 同时压缩 ‘file1’, ‘file2’ 以及目录 ‘dir1’<br>rar x file1.rar 解压rar包<br>unrar x file1.rar 解压rar包<br>tar -cvf archive.tar file1 创建一个非压缩的 tarball<br>tar -cvf archive.tar file1 file2 dir1 创建一个包含了 ‘file1’, ‘file2’ 以及 ‘dir1’的档案文件<br>tar -tf archive.tar 显示一个包中的内容<br>tar -xvf archive.tar 释放一个包<br>tar -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下<br>tar -cvfj archive.tar.bz2 dir1 创建一个bzip2格式的压缩包<br>tar -xvfj archive.tar.bz2 解压一个bzip2格式的压缩包<br>tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包<br>tar -xvfz archive.tar.gz 解压一个gzip格式的压缩包<br>zip file1.zip file1 创建一个zip格式的压缩包<br>zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包<br>unzip file1.zip 解压一个zip格式压缩包 </p>
+<h6 id="安装-1">安装</h6><p>YUM 软件包升级器 - （Fedora, RedHat及类似系统）<br>yum install package_name 下载并安装一个rpm包<br>yum localinstall package_name.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系<br>yum update package_name.rpm 更新当前系统中所有安装的rpm包<br>yum update package_name 更新一个rpm包<br>yum remove package_name 删除一个rpm包<br>yum list 列出当前系统中安装的所有包<br>yum search package_name 在rpm仓库中搜寻软件包<br>yum clean packages 清理rpm缓存删除下载的包<br>yum clean headers 删除所有头文件<br>yum clean all 删除所有缓存的包和头文件 </p>
+<p>APT 软件工具 (Debian, Ubuntu 以及类似系统)<br>apt-get install package_name 安装/更新一个 deb 包<br>apt-cdrom install package_name 从光盘安装/更新一个 deb 包<br>apt-get update 升级列表中的软件包<br>apt-get upgrade 升级所有已安装的软件<br>apt-get remove package_name 从系统删除一个deb包<br>apt-get check 确认依赖的软件仓库正确<br>apt-get clean 从下载的软件包中清理缓存<br>apt-cache search searched-package 返回包含所要搜索字符串的软件包名称 </p>
+<p>DEB 包 (Debian, Ubuntu 以及类似系统)<br>dpkg -i package.deb 安装/更新一个 deb 包<br>dpkg -r package_name 从系统删除一个 deb 包<br>dpkg -l 显示系统中所有已经安装的 deb 包<br>dpkg -l | grep httpd 显示所有名称中包含 “httpd” 字样的deb包<br>dpkg -s package_name 获得已经安装在系统中一个特殊包的信息<br>dpkg -L package_name 显示系统中已经安装的一个deb包所提供的文件列表<br>dpkg —contents package.deb 显示尚未安装的一个包所提供的文件列表<br>dpkg -S /bin/ping 确认所给的文件由哪个deb包提供 </p>
+<p>RPM 包 - （Fedora, Redhat及类似系统）<br>rpm -ivh package.rpm 安装一个rpm包<br>rpm -ivh —nodeeps package.rpm 安装一个rpm包而忽略依赖关系警告<br>rpm -U package.rpm 更新一个rpm包但不改变其配置文件<br>rpm -F package.rpm 更新一个确定已经安装的rpm包<br>rpm -e package_name.rpm 删除一个rpm包<br>rpm -qa 显示系统中所有已经安装的rpm包<br>rpm -qa | grep httpd 显示所有名称中包含 “httpd” 字样的rpm包<br>rpm -qi package_name 获取一个已安装包的特殊信息<br>rpm -qg “System Environment/Daemons” 显示一个组件的rpm包<br>rpm -ql package_name 显示一个已经安装的rpm包提供的文件列表<br>rpm -qc package_name 显示一个已经安装的rpm包提供的配置文件列表<br>rpm -q package_name —whatrequires 显示与一个rpm包存在依赖关系的列表<br>rpm -q package_name —whatprovides 显示一个rpm包所占的体积<br>rpm -q package_name —scripts 显示在安装/删除期间所执行的脚本l<br>rpm -q package_name —changelog 显示一个rpm包的修改历史<br>rpm -qf /etc/httpd/conf/httpd.conf 确认所给的文件由哪个rpm包所提供<br>rpm -qp package.rpm -l 显示由一个尚未安装的rpm包提供的文件列表<br>rpm —import /media/cdrom/RPM-GPG-KEY 导入公钥数字证书<br>rpm —checksig package.rpm 确认一个rpm包的完整性<br>rpm -qa gpg-pubkey 确认已安装的所有rpm包的完整性<br>rpm -V package_name 检查文件尺寸、 许可、类型、所有者、群组、MD5检查以及最后修改时间<br>rpm -Va 检查系统中所有已安装的rpm包- 小心使用<br>rpm -Vp package.rpm 确认一个rpm包还未安装<br>rpm2cpio package.rpm | cpio —extract —make-directories <em>bin</em> 从一个rpm包运行可执行文件<br>rpm -ivh /usr/src/redhat/RPMS/<code>arch</code>/package.rpm 从一个rpm源码安装一个构建好的包<br>rpmbuild —rebuild package_name.src.rpm 从一个rpm源码构建一个 rpm 包 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2015/07/07/linux常用命令/" data-id="cibssvmrq0003qjez6j539dum" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/07/06/Mysql相关/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Mysql相关</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI/">UI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/erlang/">erlang</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejabberd/">ejabberd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/">vpn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/ejabberd/" style="font-size: 10px;">ejabberd</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
+          </li>
+        
+          <li>
+            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/26/CentOS搭建VPN/">CentOS搭建VPN</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Allran<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/About" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

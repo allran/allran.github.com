@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="木头人">
 <meta property="og:description" content="ejabberd_15.04 在 mac os系统下的安装详解
 参考官方文档http://docs.ejabberd.im/developer/install-osx/">
-<meta property="og:updated_time" content="2015-05-12T02:24:08.000Z">
+<meta property="og:updated_time" content="2015-07-06T07:37:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ejabberd install">
 <meta name="twitter:description" content="ejabberd_15.04 在 mac os系统下的安装详解
@@ -105,15 +105,16 @@ brew <span class="keyword">install</span> autoconf
 brew <span class="keyword">install</span> automake 
 brew <span class="keyword">install</span> libtool
 brew <span class="keyword">install</span> pkg-config
+brew <span class="keyword">install</span> libyaml-dev
 </code></pre><p>2.配置&amp;安装</p>
-<pre><code>cd <span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart/ejabberd 
-chmod +x autogen.sh 
-./autogen.sh  
-.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-mysql        <span class="comment">//附加mysql</span>
-.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-all     <span class="comment">//附加所有</span>
-./rebar get-deps
+<pre><code><span class="keyword">cd</span> /Users/allran/SDK/chart/ejabberd 
+chmod +<span class="keyword">x</span> autogen.<span class="keyword">sh</span> 
+./autogen.<span class="keyword">sh</span>  
+./configure --prefix=/../my-ejabberd --enable-mysql        //附加mysql
+./configure --prefix=/../my-ejabberd --enable-<span class="keyword">all</span>     //附加所有
+./rebar <span class="built_in">get</span>-deps
 ./rebar compile
-make &amp; make install
+<span class="keyword">make</span> &amp; <span class="keyword">make</span> install
 </code></pre><p>注：如果安装失败，清除掉痕迹: make distclean</p>
 <p>3.启动</p>
 <pre><code><span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl start        /</span>/启动
@@ -149,7 +150,7 @@ make &amp; make install
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="cibixpqmb00065zeztlpb3bpt" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="cibssvmrw000bqjez39zvhdi4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejabberd/">ejabberd</a></li></ul>
@@ -191,7 +192,7 @@ make &amp; make install
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI/">UI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/erlang/">erlang</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Lua/">Lua</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/UI/">UI</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Xcode/">Xcode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/erlang/">erlang</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -200,7 +201,7 @@ make &amp; make install
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejabberd/">ejabberd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ejabberd/">ejabberd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lua/">lua</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/">vpn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xcode/">xcode</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -209,7 +210,7 @@ make &amp; make install
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/ejabberd/" style="font-size: 10px;">ejabberd</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
+      <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/ejabberd/" style="font-size: 10px;">ejabberd</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/lua/" style="font-size: 10px;">lua</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a> <a href="/tags/xcode/" style="font-size: 10px;">xcode</a>
     </div>
   </div>
 
@@ -218,7 +219,7 @@ make &amp; make install
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -230,6 +231,14 @@ make &amp; make install
       <ul>
         
           <li>
+            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
+          </li>
+        
+          <li>
             <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
           </li>
         
@@ -239,14 +248,6 @@ make &amp; make install
         
           <li>
             <a href="/2015/05/26/CentOS搭建VPN/">CentOS搭建VPN</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/13/erlang-use/">erlang use</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/12/InterlliJ-Use/">InterlliJ Use</a>
           </li>
         
       </ul>

@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>erlang use | 木头人</title>
+  <title>Archives: 2015/7 | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
-<meta property="og:type" content="article">
-<meta property="og:title" content="erlang use">
-<meta property="og:url" content="http://allran.github.io/2015/05/13/erlang-use/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="木头人">
+<meta property="og:url" content="http://allran.github.io/archives/2015/07/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.30.41.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.49.26.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.53.41.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.50.48.png">
-<meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.56.26.png">
-<meta property="og:updated_time" content="2015-05-21T02:30:17.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="erlang use">
-<meta name="twitter:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+<meta name="twitter:title" content="木头人">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -71,79 +65,58 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-erlang-use" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/13/erlang-use/" class="article-date">
-  <time datetime="2015-05-12T16:20:11.000Z" itemprop="datePublished">2015-05-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/erlang/">erlang</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      erlang use
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/07/07/linux常用命令/" class="archive-article-date">
+  <time datetime="2015-07-07T03:37:19.000Z" itemprop="datePublished">7月 7</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/07/linux常用命令/">linux常用命令</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
-<a id="more"></a>
-<h2 id="使用InterlliJ工具debug编译">使用InterlliJ工具debug编译</h2><p>1.使用brew安装rebar，然后使用<a href="https://github.com/haitaoyao/rebar-creator" target="_blank" rel="external">rebar-creator</a>创建项目。</p>
-<p>2.在Preferences-&gt;Tools-&gt;External Tools 里面添加额外的rebar编译命令，如图所示：</p>
-<p><img src="/images/2015-05-13 15.30.41.png" alt="这是一张图片"></p>
-<p>3.假如要运行项目入口在echatServer.erl里面的start()函数，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start()-&#62;&#10;  chat_room:start_link(),&#10;  chat_acceptor:start(3377),&#10;  ok.</span><br></pre></td></tr></table></figure></p>
-<p>我需要在”Edit Configurations”里面添加设置一个“Erlang Application”，如图所示:<br><img src="/images/2015-05-13 15.49.26.png" alt="这是一张图片"></p>
-<p>4.设置相应的断点，如图所示：<br><img src="/images/2015-05-13 15.53.41.png" alt="这是一张图片"></p>
-<p>5.选取start()，然后右键，选择debug，如图所示：<br><img src="/images/2015-05-13 15.50.48.png" alt="这是一张图片"></p>
-<p>6.当运行到相应断点代码，会出现debug对应信息，如图所示:<br><img src="/images/2015-05-13 15.56.26.png" alt="这是一张图片"></p>
-<p>以上就是使用Interllij编译debug时的方法。（在网上，一直没有找到对应的相关文章，所以自己记录一个，方便大家）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="cibssvmru0008qjez9ccq9l0c" class="article-share-link">Share</a>
-      
-      
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2015/07/06/Mysql相关/" class="archive-article-date">
+  <time datetime="2015-07-06T02:15:01.000Z" itemprop="datePublished">7月 6</time>
+</a>
+      
   
-    <a href="/2015/05/26/CentOS搭建VPN/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CentOS搭建VPN
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/07/06/Mysql相关/">Mysql相关</a>
+    </h1>
   
-  
-    <a href="/2015/05/12/InterlliJ-Use/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">InterlliJ Use</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
-
-
-
-
+  
+  
+    </div></section>
+  
 </section>
         
           <aside id="sidebar">
