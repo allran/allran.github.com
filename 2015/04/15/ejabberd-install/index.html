@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="木头人">
 <meta property="og:description" content="ejabberd_15.04 在 mac os系统下的安装详解
 参考官方文档http://docs.ejabberd.im/developer/install-osx/">
-<meta property="og:updated_time" content="2015-07-06T07:37:43.000Z">
+<meta property="og:updated_time" content="2015-07-13T03:14:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ejabberd install">
 <meta name="twitter:description" content="ejabberd_15.04 在 mac os系统下的安装详解
@@ -107,14 +107,14 @@ brew <span class="keyword">install</span> libtool
 brew <span class="keyword">install</span> pkg-config
 brew <span class="keyword">install</span> libyaml-dev
 </code></pre><p>2.配置&amp;安装</p>
-<pre><code><span class="keyword">cd</span> /Users/allran/SDK/chart/ejabberd 
-chmod +<span class="keyword">x</span> autogen.<span class="keyword">sh</span> 
-./autogen.<span class="keyword">sh</span>  
-./configure --prefix=/../my-ejabberd --enable-mysql        //附加mysql
-./configure --prefix=/../my-ejabberd --enable-<span class="keyword">all</span>     //附加所有
-./rebar <span class="built_in">get</span>-deps
+<pre><code>cd <span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart/ejabberd 
+chmod +x autogen.sh 
+./autogen.sh  
+.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-mysql        <span class="comment">//附加mysql</span>
+.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-all     <span class="comment">//附加所有</span>
+./rebar get-deps
 ./rebar compile
-<span class="keyword">make</span> &amp; <span class="keyword">make</span> install
+make &amp; make install
 </code></pre><p>注：如果安装失败，清除掉痕迹: make distclean</p>
 <p>3.启动</p>
 <pre><code><span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl start        /</span>/启动
