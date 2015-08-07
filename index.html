@@ -89,36 +89,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于SSL/TLS介绍见文章 <a href="http://segmentfault.com/blog/seanlook/1190000002554673" target="_blank" rel="external">SSL/TLS原理详解</a>。<br>关于证书授权中心CA以及数字证书等概念，请移步 <a href="http://segmentfault.com/blog/seanlook/1190000002568019" target="_blank" rel="external">OpenSSL 与 SSL 数字证书概念贴</a> 。</p>
+        <p>关于SSL/TLS介绍见文章 <a href="http://segmentfault.com/blog/seanlook/1190000002554673">SSL/TLS原理详解</a>。<br>关于证书授权中心CA以及数字证书等概念，请移步 <a href="http://segmentfault.com/blog/seanlook/1190000002568019">OpenSSL 与 SSL 数字证书概念贴</a> 。</p>
 <p>openssl是一个开源程序的套件、这个套件有三个部分组成：一是libcryto，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是libssl，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。</p>
-<p>默认情况ubuntu和CentOS上都已安装好openssl。CentOS 6.x 上有关ssl证书的目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/pki/CA/&#10;            newcerts    &#23384;&#25918;CA&#31614;&#32626;&#65288;&#39041;&#21457;&#65289;&#36807;&#30340;&#25968;&#23383;&#35777;&#20070;&#65288;&#35777;&#20070;&#22791;&#20221;&#30446;&#24405;&#65289;&#10;            private     &#29992;&#20110;&#23384;&#25918;CA&#30340;&#31169;&#38053;&#10;            crl         &#21514;&#38144;&#30340;&#35777;&#20070;&#10;&#10;/etc/pki/tls/&#10;             cert.pem    &#36719;&#38142;&#25509;&#21040;certs/ca-bundle.crt&#10;             certs/      &#35813;&#26381;&#21153;&#22120;&#19978;&#30340;&#35777;&#20070;&#23384;&#25918;&#30446;&#24405;&#65292;&#21487;&#20197;&#25151;&#23376;&#33258;&#24049;&#30340;&#35777;&#20070;&#21644;&#20869;&#32622;&#35777;&#20070;&#10;                   ca-bundle.crt    &#20869;&#32622;&#20449;&#20219;&#30340;&#35777;&#20070;&#10;             private    &#35777;&#20070;&#23494;&#38053;&#23384;&#25918;&#30446;&#24405;&#10;             openssl.cnf    openssl&#30340;CA&#20027;&#37197;&#32622;&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
-<h2 id="一-_安装配置openssl">一. 安装配置openssl</h2><p>参考自<a href="http://dev.antoinesolutions.com/openssl" target="_blank" rel="external">原链接</a></p>
-<ol>
-<li><p>安装 OpenSSL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$yum install openssl</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置openssl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Change your working directory to /etc/pki/CA&#10;$cd /etc/pki/CA&#10;Create a foloder to hold the Certificates&#10;$mkdir certs&#10;Create a folder to hold the Certificate Revocation List&#10;$mkdir crl&#10;Create a folder to hold the Server Certificates in PEM (unencrypted) format&#10;$mkdir newcerts&#10;Create a file that holds the database of certificates&#10;$touch index.txt&#10;Create a file that holds the next certificate serial number&#10;$echo &#39;01&#39; &#62; serial&#10;Create a file that holds the next Certificate Revocation List serial number&#10;$echo &#39;01&#39; &#62; crlnumber&#10;Make a copy the systems default openssl configuration file for our use&#10;$cp /etc/pki/tls/openssl.cnf openssl.cnf&#10;Edit the /etc/pki/CA/openssl.cnf file making the following changes&#10;Change line 37&#10;from dir             = ../../CA              # Where everything is kept&#10;to dir             = .                     # Where everything is kept&#10;Change line 45&#10;from certificate     = $dir/cacert.pem       # The CA certificate&#10;to certificate     = $dir/certs/ca.crt     # The CA certificate&#10;Change line 50&#10;from private_key     = $dir/private/cakey.pem# The private key&#10;to private_key     = $dir/private/ca.key   # The private key&#10;Make the /etc/pki/CA/openssl.cnf file not world readable&#10;$chmod 0600 openssl.cnf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>证书颁发机构</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Change your working directory to /etc/pki/CA&#10;$cd /etc/pki/CA&#10;Create a certificate authority good for ten years&#10;$openssl req -config openssl.cnf -new -x509 -extensions v3_ca -keyout private/ca.key -out certs/ca.crt -days 3650&#10;Enter PEM pass phrase: $password&#10;Re-Enter PEM pass phrase: $password&#10;Country Name: $country&#10;State or Province Name: $state&#10;Locality Name: $city&#10;Organization Name: $company&#10;Organizational Unit Name: $department = Certificate Authority&#10;Common Name: ca.$domain&#10;Email Address: ca@$domain&#10;Restrict access to the private key so that only root can read it&#10;$chmod 0400 private/ca.key</span><br></pre></td></tr></table></figure>
-<ol>
-<li>证书申请</li>
-</ol>
-<p>Create a Certificate Request (CSR)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Change your working directory to /etc/pki/CA&#10;$cd /etc/pki/CA&#10;Create a certificate request good for one year&#10;$openssl req -config openssl.cnf -new -nodes -keyout private/$domain.key -out $domain.csr -days 365&#10;Country Name: $country&#10;State or Province Name: $state&#10;Locality Name: $city&#10;Organization Name: $company&#10;Organizational Unit Name: $department = Secure Web Server&#10;Common Name: $url&#10;Email Address: $email&#10;Challenge password: [ENTER]&#10;Optional company name: [ENTER]&#10;Restrict access to the private key so that only root and apache can read it&#10;$chown root:apache private/$domain.key&#10;$chmod 0440 private/$domain.key</span><br></pre></td></tr></table></figure></p>
-<p>Sign a Certificate Request (CSR)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Change your working directory to /etc/pki/CA&#10;$cd /etc/pki/CA&#10;Sign a certificate request&#10;$openssl ca -config openssl.cnf -policy policy_anything -out certs/$domain.crt -infiles $domain.csr&#10;Enter the ca.key password: $password&#10;Sign the certificate: y&#10;1 out of 1 certificate requests certified, commit: y&#10;Delete the certificate request&#10;$rm -f $domain.csr</span><br></pre></td></tr></table></figure></p>
-<h2 id="二-_ejabberd证书设置">二. ejabberd证书设置</h2><ol>
-<li>创建对应使用的证书。更多请看<a href="http://www.jabberdoc.org/app_sslkey.html" target="_blank" rel="external">这个描述</a></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -x509 -newkey rsa:1024 -days 3650 -keyout privkey.pem -out server.pem&#10;openssl rsa -in privkey.pem -out privkey.pem&#10;cat privkey.pem &#62;&#62; server.pem&#10;rm privkey.pem</span><br></pre></td></tr></table></figure>
-<ol>
-<li>修改ejabberd.yml文件参数路径</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listen:&#10;  -&#10;    port: 5222&#10;    module: ejabberd_c2s&#10;    certfile: &#34;/root/chart/my-ejabberd/etc/ejabberd/server.pem&#34;&#10;    starttls: true&#10;    starttls_required: true&#10;    #max_stanza_size: 65536&#10;    max_ack_queue: 32767&#10;    resume_timeout: 1200        # 20 minutes to recover session,&#10;    resend_on_timeout: true     # but it is okay to timeout.&#10;    shaper: c2s_shaper&#10;    access: c2s&#10;    &#10;&#10;host_config:&#10;  &#34;qulunping.com&#34;:&#10;     domain_certfile: &#34;/root/chart/my-ejabberd/etc/ejabberd/server.pem&#34;</span><br></pre></td></tr></table></figure>
-<p>然后重起服务。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/08/06/ejabberd-TLS相关/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -165,77 +142,11 @@
 <p>　　　　复制n个字　　   —　　nyw</p>
 <p>　　　　复制n行　　      —　　nyy</p>
 <p>　　　　粘贴出复制的内容　　—　　p</p>
-<p>　　　　——————————————-寄存器相关—————————————————————————-</p>
-<p>　　　　复制n行到寄存器？　　　　—　　？nyy</p>
-<p>　　　　复制n个字到寄存器？　　　—　　？nyw</p>
-<p>　　　　复制n个字符到寄存器？　　—　　？nyl</p>
-<p>　　　　粘贴出寄存器？中的内容　　  —　　？p</p>
-<p>　　　　（注，？为寄存器名字，用字母表示）</p>
-<p>　　　　例，h10yy 复制10行到寄存器h，hp 将寄存器h中的内容粘贴到光标处。</p>
-<p>　　　　——————————————VISUAL模式下复制选中内容———————————————————</p>
-<p>　　　　在命令模式下按‘V’进入VISUAL模式，方向键移动光标选中任何内容后</p>
-<p>　　　　y 复制</p>
-<p>　　　　d 剪切<br>然后再命令模式下 p 粘贴到指定位置</p>
-<p>　　　　</p>
-<p>　　　　——————————————复制内容到指定行———————————————————————-</p>
-<p>　　　　复制n1n2行间的内容到n3行　　—　　:n1,n2 co n3</p>
-<p>　　　　</p>
-<p>　　2&gt;,移动</p>
-<p>　　　　移动n1n2行间的内容到n3行　　—　　:n1,n2 m n3</p>
-<p>　　3&gt;,删除</p>
-<p>　　　　在命令模式下，以光标所在位置为参考</p>
-<p>　　　　删除一个字　—　　dw</p>
-<p>　　　　删除一字节   —　　dl</p>
-<p>　　　　删除一字符   —　　x</p>
-<p>　　　　删除一行　　—　　dd</p>
-<p>　　　　删除 n行　　—　　ndd</p>
-<p>　　　　删除n1到n2之间的内容（包括n1,n2）　　—　　:n1,n2 d　　　</p>
-<p>　　　　注，ndd删除n行时，删除的内容放到了1号寄存器中，可以使用命令 1p 将删除的内容粘贴出来。　</p>
-<p>二，字符查找与替换</p>
-<p>　　搜索———————————————————————————————————————————-</p>
-<p>　　　　向后搜索　　—　　/pattern</p>
-<p>　　　　向前搜索　　—　　?pattern</p>
-<p>　　　　搜索与光标所在字符串相同的字符串　　—   *</p>
-<p>　　　　pattern为匹配模式，可以为正则表达式。</p>
-<p>　　　　n 查找下一个，N查找上一个。</p>
-<p>　　替换————————————————————————————————————————————</p>
-<p>　　　　:s/p1/p2/　　  　　—当前行的第一个p1替换为p2</p>
-<p>　　　　:s/p1/p2/g　　　　—当前行的所有p1替换为p2</p>
-<p>　　　　:%s/p1/p2/g　　　—每一行的所有p1替换为p2</p>
-<p>　　　　:n1,n2s/p1/p2/g   —n1，n2行之间的p1替换为p2</p>
-<p>　　　　:n:$s/p1/p2/g　　 —从第n行到最后一行的所有p1替换为p2</p>
-<p>　　</p>
-<p>三，光标转跳与翻页</p>
-<p>　　在命令模式下，</p>
-<p>　　转跳到行首　　—　　gg</p>
-<p>　　跳转到第n行　　—　　:n</p>
-<p>　　转跳到最后一行  —　　:$</p>
-<p>　　转跳到与光标所在括号相匹配的反括号　　—　　%</p>
-<p>　　转跳到光标所在行的行末　　　　　　　　—　　$</p>
-<p>　　前翻半屏　　— ctrl + u</p>
-<p>　　后翻半屏　　— ctrl + d<br>　　整页翻页 ctrl-f ctrl-b<br>f就是forword b就是backward</p>
-<p>翻半页<br>ctrl-d ctlr-u<br>d=down u=up</p>
-<p>滚一行<br>ctrl-e ctrl-y</p>
-<p>zz 让光标所杂的行居屏幕中央<br>zt 让光标所杂的行居屏幕最上一行 t=top<br>zb 让光标所杂的行居屏幕最下一行 b=bottom</p>
-<p>　　打开文件并定位到第n行　　—　　vi path/file +n</p>
-<p>四，多文件编辑</p>
-<p>　  vi file1 file2 在一个视窗中打开两个文件</p>
-<p>　　:n 显示下一个文件，:N显示上一个文件。</p>
-<p>　　  CWW=ctrl+w+w<br>　　<br>　　  当切换到ToolBar时，可以按TAB键在不同文件上切换，并按ENTER可以选择进入。</p>
-<p> 　　vi file 在视窗中打开一个文件</p>
-<p> 　　:sp file2</p>
-<p>　　 :vsp file2<br>　　<br>　　 　可以使用CWW命令在文件间切换，或者使用CW+k ,CW+j ,CW+h ,CW+l 切换到当前文件的上、下、左、右方向的文件窗口。</p>
-<p>五，常用命令</p>
-<p>　　FF 查看光标所在的函数</p>
-<p>　　:set nu 　　　—显示行号</p>
-<p>　　:set nonu　　—不显示行号</p>
-<p>　　:set nohls　　—退出搜索标记</p>
-<p>　　:set hls　　　 —添加搜索标记</p>
-<p>　　:ls　　　　　　—查看当前缓冲区里的文件</p>
-<p>　　V　　　　　　 —进入行块选择模式</p>
-<p>　　ctrl+V　　　　—进入列块选择模式</p>
-<p>　　esc　　　　　 —进入命令模式</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2015/08/03/vi编辑相关/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -456,67 +367,7 @@
 rpm -<span class="keyword">qa</span> | <span class="keyword">grep</span> mysql*
 </code></pre><p>查看有没有安装包：</p>
 <pre><code>yum <span class="type">list</span> mysql*
-</code></pre><p>安装mysql客户端：</p>
-<pre><code>yum <span class="keyword">install</span> mysql
-</code></pre><p>安装mysql 服务器端：</p>
-<pre><code>yum <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span>
-
-
-
-yum <span class="keyword">install</span> mysql-devel</span>
-</code></pre><p>2、启动&amp;&amp;停止</p>
-<p>数据库字符集设置</p>
-<pre><code>mysql配置文件/etc/<span class="keyword">my</span>.cnf中加入default-<span class="property">character</span>-<span class="keyword">set</span>=utf8
-</code></pre><p>启动mysql服务：</p>
-<pre><code><span class="keyword">service</span> mysqld <span class="literal">start</span>或者/etc/init.d/mysqld <span class="literal">start</span>
-</code></pre><p>开机启动：</p>
-<pre><code>chkconfig -<span class="built_in">add</span> mysqld，查看开机启动设置是否成功chkconfig <span class="comment">--list | grep mysql*</span>
-
-
-
-mysqld             <span class="number">0</span>:关闭    <span class="number">1</span>:关闭    <span class="number">2</span>:启用    <span class="number">3</span>:启用    <span class="number">4</span>:启用    <span class="number">5</span>:启用    <span class="number">6</span>:关闭
-</code></pre><p>停止：</p>
-<pre><code><span class="keyword">service</span> mysqld <span class="literal">stop</span>
-</code></pre><p>3、登录</p>
-<p>创建root管理员：</p>
-<pre><code>mysqladmin -u <span class="literal">root</span> <span class="literal">password</span> <span class="number">123456</span>
-</code></pre><p>登录：</p>
-<pre><code><span class="title">mysql</span> -u root -p输入密码即可。
-</code></pre><p>忘记密码：</p>
-<pre><code>service mysqld <span class="operator"><span class="keyword">stop</span>
-
-
-
-mysqld_safe <span class="comment">--user=root --skip-grant-tables</span>
-
-
-
-mysql -u root
-
-
-
-<span class="keyword">use</span> mysql
-
-
-
-<span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">"new_pass"</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">"root"</span>;</span>
-
-
-
-<span class="operator"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span>  
-</code></pre><p>4、远程访问</p>
-<p>开放防火墙的端口号</p>
-<p>mysql增加权限：mysql库中的user表新增一条记录host为“%”，user为“root”。</p>
-<p>5、Linux MySQL的几个重要目录</p>
-<p>数据库目录</p>
-<pre><code><span class="regexp">/var/</span>lib<span class="regexp">/mysql/</span>
-</code></pre><p>配置文件</p>
-<pre><code>/usr/share /mysql（mysql.<span class="keyword">server</span>命令及配置文件）
-</code></pre><p>相关命令</p>
-<pre><code><span class="regexp">/usr/</span>bin（mysqladmin mysqldump等命令）
-</code></pre><p>启动脚本</p>
-<pre><code><span class="regexp">/etc/</span>rc.d<span class="regexp">/init.d/</span>（启动脚本文件mysql的目录） 
-</code></pre><h2 id="linux下mysql的root密码忘记解决方法">linux下mysql的root密码忘记解决方法</h2><p>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。<br>因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的<br>状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对<br>外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全<br>状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。</p>
+</code></pre>
         
           <p class="article-more-link">
             <a href="/2015/07/06/Mysql相关/#more">Read More</a>

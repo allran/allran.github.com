@@ -13,7 +13,7 @@ openssl是一个开源程序的套件、这个套件有三个部分组成：一�
 <meta property="og:site_name" content="木头人">
 <meta property="og:description" content="关于SSL/TLS介绍见文章 SSL/TLS原理详解。关于证书授权中心CA以及数字证书等概念，请移步 OpenSSL 与 SSL 数字证书概念贴 。
 openssl是一个开源程序的套件、这个套件有三个部分组成：一是libcryto，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是libssl，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工">
-<meta property="og:updated_time" content="2015-08-06T07:15:33.000Z">
+<meta property="og:updated_time" content="2015-08-07T03:07:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ejabberd TLS相关">
 <meta name="twitter:description" content="关于SSL/TLS介绍见文章 SSL/TLS原理详解。关于证书授权中心CA以及数字证书等概念，请移步 OpenSSL 与 SSL 数字证书概念贴 。
@@ -93,6 +93,7 @@ openssl是一个开源程序的套件、这个套件有三个部分组成：一�
       
         <p>关于SSL/TLS介绍见文章 <a href="http://segmentfault.com/blog/seanlook/1190000002554673" target="_blank" rel="external">SSL/TLS原理详解</a>。<br>关于证书授权中心CA以及数字证书等概念，请移步 <a href="http://segmentfault.com/blog/seanlook/1190000002568019" target="_blank" rel="external">OpenSSL 与 SSL 数字证书概念贴</a> 。</p>
 <p>openssl是一个开源程序的套件、这个套件有三个部分组成：一是libcryto，这是一个具有通用功能的加密库，里面实现了众多的加密库；二是libssl，这个是实现ssl机制的，它是用于实现TLS/SSL的功能；三是openssl，是个多功能命令行工具，它可以实现加密解密，甚至还可以当CA来用，可以让你创建证书、吊销证书。</p>
+<a id="more"></a>
 <p>默认情况ubuntu和CentOS上都已安装好openssl。CentOS 6.x 上有关ssl证书的目录结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/pki/CA/&#10;            newcerts    &#23384;&#25918;CA&#31614;&#32626;&#65288;&#39041;&#21457;&#65289;&#36807;&#30340;&#25968;&#23383;&#35777;&#20070;&#65288;&#35777;&#20070;&#22791;&#20221;&#30446;&#24405;&#65289;&#10;            private     &#29992;&#20110;&#23384;&#25918;CA&#30340;&#31169;&#38053;&#10;            crl         &#21514;&#38144;&#30340;&#35777;&#20070;&#10;&#10;/etc/pki/tls/&#10;             cert.pem    &#36719;&#38142;&#25509;&#21040;certs/ca-bundle.crt&#10;             certs/      &#35813;&#26381;&#21153;&#22120;&#19978;&#30340;&#35777;&#20070;&#23384;&#25918;&#30446;&#24405;&#65292;&#21487;&#20197;&#25151;&#23376;&#33258;&#24049;&#30340;&#35777;&#20070;&#21644;&#20869;&#32622;&#35777;&#20070;&#10;                   ca-bundle.crt    &#20869;&#32622;&#20449;&#20219;&#30340;&#35777;&#20070;&#10;             private    &#35777;&#20070;&#23494;&#38053;&#23384;&#25918;&#30446;&#24405;&#10;             openssl.cnf    openssl&#30340;CA&#20027;&#37197;&#32622;&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
 <h2 id="一-_安装配置openssl">一. 安装配置openssl</h2><p>参考自<a href="http://dev.antoinesolutions.com/openssl" target="_blank" rel="external">原链接</a></p>
 <ol>
