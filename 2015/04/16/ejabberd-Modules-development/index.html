@@ -21,7 +21,7 @@ mod_archive (聊天记录模块)
 mod_archive (聊天记录模块)
 
 安装模块1ejabberdctl modules_update_specs&amp;#10;ejabberdctl modules_available&amp;">
-<meta property="og:updated_time" content="2015-07-13T02:39:15.000Z">
+<meta property="og:updated_time" content="2015-08-07T02:42:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ejabberd Modules development">
 <meta name="twitter:description" content="参考官方文档：http://docs.ejabberd.im/developer/modules/
@@ -113,11 +113,12 @@ mod_archive (聊天记录模块)
 <h2 id="使用mod_logdb(聊天记录mysql)">使用mod_logdb(聊天记录mysql)</h2><p>这个链接的<a href="https://github.com/pld-linux/ejabberd/blob/master/ejabberd-mod_logdb.patch" target="_blank" rel="external">mod_logdb</a>已经更新适配ejabberd15.03,下载该文件，应用该补丁，就可以添加该模块了。<br>关于ejabberd.yml文件相关设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_logdb:&#10;  dbs:&#10;    mysql: &#10;      user: &#34;ejabberd&#34;&#10;      password: &#34;ejabberd&#34;&#10;      server: &#34;127.0.0.1&#34;&#10;      port: 3306&#10;      db: &#34;ejabberdlog&#34; &#10;  vhosts: &#10;    &#34;localhost&#34;: mysql&#10;  groupchat: all&#10;  dolog_default: true&#10;  poll_users_settings: 5</span><br></pre></td></tr></table></figure></p>
 <h2 id="使用mod_proxy65(基于x65协议的文件传输模块)">使用mod_proxy65(基于x65协议的文件传输模块)</h2><p>关于ejabberd.yml文件相关设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_proxy65: &#10;  hostname: &#34;myhostnamehere&#34;&#10;  ip: &#34;127.0.0.1&#34;&#10;  port: 7777&#10;  access: all&#10;  shaper: c2s_shaper</span><br></pre></td></tr></table></figure></p>
 <p><a href="https://github.com/nplexity/xmpp-file-transfer-demo" target="_blank" rel="external">xmpp-file-transfer-demo</a>是ios传输文件demo,有需要的可以下载研究。</p>
+<h2 id="使用mod_register">使用mod_register</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_register:&#10;   ##&#10;   ## Protect In-Band account registrations with CAPTCHA.&#10;   ##&#10;   ## captcha_protected: true&#10;&#10;   ##&#10;   ## Set the minimum informational entropy for passwords.&#10;   ##&#10;   ## password_strength: 32&#10;&#10;   ##&#10;   ## After successful registration, the user receives&#10;   ## a message with this subject and body.&#10;   ##&#10;   welcome_message:&#10;     subject: &#34;Welcome!&#34;&#10;     body: |-&#10;       Hi.&#10;       Welcome to this XMPP server.&#10;&#10;   ##&#10;   ## When a user registers, send a notification to&#10;   ## these XMPP accounts.&#10;   ##&#10;   ## registration_watchers:&#10;   ##   - &#34;admin1@example.org&#34;&#10;&#10;   ##&#10;   ## Only clients in the server machine can register accounts&#10;   ##&#10;   #ip_access: trusted_network&#10;&#10;   ##&#10;   ## Local c2s or remote s2s users cannot register accounts&#10;   ##&#10;   access_from: register&#10;&#10;   # access: register</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/16/ejabberd-Modules-development/" data-id="cibufpsn7000gq6ezl6ux0qp7" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/16/ejabberd-Modules-development/" data-id="cid111tp2000jhnezcjj6lq5j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +185,7 @@ mod_archive (聊天记录模块)
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -196,23 +197,23 @@ mod_archive (聊天记录模块)
       <ul>
         
           <li>
+            <a href="/2015/08/06/ejabberd-TLS相关/">ejabberd TLS相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/03/vi编辑相关/">vi编辑相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/30/ftp相关/">ftp相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/Phabricator相关/">Phabricator相关</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/08/ejabberd-debug/">ejabberd debug</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
           </li>
         
       </ul>

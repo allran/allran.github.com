@@ -67,6 +67,245 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-erlang-use" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/13/erlang-use/" class="article-date">
+  <time datetime="2015-05-12T16:20:11.000Z" itemprop="datePublished">2015-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/erlang/">erlang</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/13/erlang-use/">erlang use</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装">安装</h2><ol>
+<li>yum安装，见<a href="https://www.erlang-solutions.com/downloads/download-erlang-otp">https://www.erlang-solutions.com/downloads/download-erlang-otp</a></li>
+<li>源码安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install unixODBC-devel.x86_64&#10;yum -y  install openssl-devel.x86_64&#10;yum  -y  install gcc-c++.x86_64&#10;yum install -y mesa*&#10;yum install -y freeglut*&#10;yum install gcc&#10;yum install gcc-c++&#10;yum install gtk2*&#10;wget https://sourceforge.net/projects/wxwindows/files/3.0.2/wxWidgets-3.0.2.tar.bz2&#10;./configure    --with-opengl --enable-debug --enable-unicode &#10;make &#38; make install&#10;wx-config --version-full  #&#39564;&#35777;wxWidgets&#65306;&#10;3.0.1.0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="常见错误">常见错误</h2><ol>
+<li>关于“”Can’t set long node name”问题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@alan download]# erl -name mynode&#10;&#123;error_logger,&#123;&#123;2015,7,29&#125;,&#123;22,52,37&#125;&#125;,&#34;Can&#39;t set long node name!\nPlease check your configuration\n&#34;,[]&#125;&#10;......</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这是因为/etc/hosts配置和自身hostname不一致引起的。<br>比如我的hostname为alan，则在/etc/hosts中添加<br>127.0.0.1    alan.localdomain alan<br>即可</p>
+<h2 id="常用命令">常用命令</h2><p> observer:start().<br> debugger:start().</p>
+<h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/05/13/erlang-use/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="cid111tot000ahnezbt4hxybx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+  
+    <article id="post-InterlliJ-Use" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/12/InterlliJ-Use/" class="article-date">
+  <time datetime="2015-05-12T01:46:27.000Z" itemprop="datePublished">2015-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/12/InterlliJ-Use/">InterlliJ Use</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="快捷键">快捷键</h3><p><strong>注意</strong> 下面罗列的是一些常用快捷键:</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command+P</td>
+<td>方法参数提示</td>
+</tr>
+<tr>
+<td>command+alt+L</td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td>command+alt+I</td>
+<td>自动缩进，不用多次使用tab或着backspace键，也是比较方便的</td>
+</tr>
+<tr>
+<td>ctrl+shift+space</td>
+<td>代码补全，这个会判断可能用到的，这个代码补全和代码提示是不一样的</td>
+</tr>
+<tr>
+<td>command+/</td>
+<td>注释一行或着多行 //</td>
+</tr>
+<tr>
+<td>ctrl+shift+/</td>
+<td>注释/<em>…</em>/</td>
+</tr>
+<tr>
+<td>shift+f6</td>
+<td>重命名</td>
+</tr>
+<tr>
+<td>command + F12</td>
+<td>类似eclipse 的ctrl + O的功能outline</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2015/05/12/InterlliJ-Use/" data-id="cid111tp9000rhnezs4rqmlcf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+  
+    <article id="post-UI-Size" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/05/UI-Size/" class="article-date">
+  <time datetime="2015-05-05T01:54:46.000Z" itemprop="datePublished">2015-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/UI/">UI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/05/UI-Size/">UI Size</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p><a href="http://www.uigreat.com/guifan/" target="_blank" rel="external">UI尺寸规范</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2015/05/05/UI-Size/" data-id="cid111tp4000khnezuxpcovr6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UI/">UI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+  
+    <article id="post-ejabberd-Modules-development" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/16/ejabberd-Modules-development/" class="article-date">
+  <time datetime="2015-04-16T08:45:18.000Z" itemprop="datePublished">2015-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/16/ejabberd-Modules-development/">ejabberd Modules development</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>参考官方文档：<br><a href="http://docs.ejabberd.im/developer/modules/" target="_blank" rel="external">http://docs.ejabberd.im/developer/modules/</a></p>
+<p>常用三方模块(<a href="https://github.com/processone/ejabberd-contrib" target="_blank" rel="external">https://github.com/processone/ejabberd-contrib</a>)</p>
+<ul>
+<li>mod_archive (聊天记录模块)</li>
+</ul>
+<p>安装模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ejabberdctl modules_update_specs&#10;ejabberdctl modules_available&#10;ejabberdctl module_install mod_mam</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用mod_logdb(聊天记录mysql)">使用mod_logdb(聊天记录mysql)</h2><p>这个链接的<a href="https://github.com/pld-linux/ejabberd/blob/master/ejabberd-mod_logdb.patch" target="_blank" rel="external">mod_logdb</a>已经更新适配ejabberd15.03,下载该文件，应用该补丁，就可以添加该模块了。<br>关于ejabberd.yml文件相关设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_logdb:&#10;  dbs:&#10;    mysql: &#10;      user: &#34;ejabberd&#34;&#10;      password: &#34;ejabberd&#34;&#10;      server: &#34;127.0.0.1&#34;&#10;      port: 3306&#10;      db: &#34;ejabberdlog&#34; &#10;  vhosts: &#10;    &#34;localhost&#34;: mysql&#10;  groupchat: all&#10;  dolog_default: true&#10;  poll_users_settings: 5</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用mod_proxy65(基于x65协议的文件传输模块)">使用mod_proxy65(基于x65协议的文件传输模块)</h2><p>关于ejabberd.yml文件相关设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_proxy65: &#10;  hostname: &#34;myhostnamehere&#34;&#10;  ip: &#34;127.0.0.1&#34;&#10;  port: 7777&#10;  access: all&#10;  shaper: c2s_shaper</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/nplexity/xmpp-file-transfer-demo" target="_blank" rel="external">xmpp-file-transfer-demo</a>是ios传输文件demo,有需要的可以下载研究。</p>
+<h2 id="使用mod_register">使用mod_register</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mod_register:&#10;   ##&#10;   ## Protect In-Band account registrations with CAPTCHA.&#10;   ##&#10;   ## captcha_protected: true&#10;&#10;   ##&#10;   ## Set the minimum informational entropy for passwords.&#10;   ##&#10;   ## password_strength: 32&#10;&#10;   ##&#10;   ## After successful registration, the user receives&#10;   ## a message with this subject and body.&#10;   ##&#10;   welcome_message:&#10;     subject: &#34;Welcome!&#34;&#10;     body: |-&#10;       Hi.&#10;       Welcome to this XMPP server.&#10;&#10;   ##&#10;   ## When a user registers, send a notification to&#10;   ## these XMPP accounts.&#10;   ##&#10;   ## registration_watchers:&#10;   ##   - &#34;admin1@example.org&#34;&#10;&#10;   ##&#10;   ## Only clients in the server machine can register accounts&#10;   ##&#10;   #ip_access: trusted_network&#10;&#10;   ##&#10;   ## Local c2s or remote s2s users cannot register accounts&#10;   ##&#10;   access_from: register&#10;&#10;   # access: register</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://allran.github.io/2015/04/16/ejabberd-Modules-development/" data-id="cid111tp2000jhnezcjj6lq5j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+  
     <article id="post-ejabberd-install" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/15/ejabberd-install/" class="article-date">
@@ -104,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="cibufpsn4000bq6ezfr5airab" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="cid111tow000dhnezsaofyxdg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejabberd/">ejabberd</a></li></ul>
@@ -154,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/07/2015-04-07-rebar/" data-id="cibufpsnl000vq6ezpv47c9ae" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/04/07/2015-04-07-rebar/" data-id="cid111tpf000zhnezuqh9tpby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/01/25/2015-01-25-Hexo/" data-id="cibufpsnn000xq6ezoiyig1ru" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/01/25/2015-01-25-Hexo/" data-id="cid111tph0011hnezu7bwup2g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -258,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/" data-id="cibufpsnp0010q6ezh03c6bn7" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/28/2014-01-28-xcode-huan-jing-bian-liang/" data-id="cid111tpj0014hnezsh2b1q4u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
@@ -309,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/26/2014-01-26-lua-design-patterns/" data-id="cibufpsnt0015q6ezu9kkjhbw" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/26/2014-01-26-lua-design-patterns/" data-id="cid111tpn0019hnez4noo74of" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/">lua</a></li></ul>
@@ -370,319 +609,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="cibufpsnv001aq6ezbxhvqorv" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2014/01/15/2014-01-15-gitzi-yuan-guan-li/" data-id="cid111tpp001ehnezg5g107gu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-2013-12-17-about-octopress" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/12/17/2013-12-17-about-octopress/" class="article-date">
-  <time datetime="2013-12-17T01:19:27.000Z" itemprop="datePublished">2013-12-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/12/17/2013-12-17-about-octopress/">About Octopress</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Octopress 简明手册</p>
-<ul>
-<li><p>利用Octopress搭建一个Github博客<br><a href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/" target="_blank" rel="external">http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/</a><br><a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/" target="_blank" rel="external">http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/</a></p>
-</li>
-<li><p>在线 Markdown 编辑阅读器<a href="http://www.zybuluo.com/mdeditor" target="_blank" rel="external">http://www.zybuluo.com/mdeditor</a><br>想要了解更详细的语法说明，可以参考 <a href="http://www.zybuluo.com/mdeditor?url=http://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Markdown 语法简明手册</a></p>
-</li>
-</ul>
-<p>Octopress常用命令</p>
-<pre><code><span class="comment">//安装Octopress</span>
-$ git clone git:<span class="comment">//github.com/imathis/octopress.git octopress</span>
-$ <span class="keyword">cd</span> octopress    # <span class="keyword">If</span> you <span class="keyword">use</span> RVM, You'll be asked <span class="keyword">if</span> you trust t <span class="keyword">he</span> .rvmrc <span class="keyword">file</span> (say yes).
-$ ruby --<span class="keyword">version</span>  # Should <span class="keyword">report</span> Ruby 1.9.3
-$ gem install bundler
-$ bundle install
-$ rake install
-
-<span class="comment">//将博客部署到GitHub上</span>
-$ rake setup_github_pages
-$ rake <span class="keyword">generate</span>
-$ rake deploy
-$ git add .
-$ git commit -<span class="keyword">m</span> 'Initial source commit'
-$ git push origin source
-
-<span class="comment">//预览通过 http://localhost:4000/</span>
-$ rake new_post[<span class="string">"title"</span>]
-rake preview
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-about-octopress/" data-id="cibufpso0001kq6eza6vjs9jx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-  
-    <article id="post-2013-12-17-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/12/17/2013-12-17-first-blog/" class="article-date">
-  <time datetime="2013-12-17T01:18:01.000Z" itemprop="datePublished">2013-12-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/markdown/">markdown</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/12/17/2013-12-17-first-blog/">First blog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Welcome_to_Allran’s_blog!">Welcome to Allran’s blog!</h1><p>Hey! I’m your first Markdown document in <strong>StackEdit</strong>[^stackedit]. Don’t delete me, I’m very helpful! I can be recovered anyway in the <strong>Utils</strong> tab of the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
-<hr>
-<h2 id="Documents">Documents</h2><p>StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible <strong>offline!</strong></p>
-<blockquote>
-<p><strong>Note:</strong></p>
-<ul>
-<li>StackEdit is accessible offline after the application has been loaded for the first time.</li>
-<li>Your local documents are not shared between different browsers or computers.</li>
-<li>Clearing your browser’s data may <strong>delete all your local documents!</strong> Make sure your documents are synchronized with <strong>Google Drive</strong> or <strong>Dropbox</strong> (check out the <a href="#synchronization"><i class="icon-refresh"></i> Synchronization</a> section).</li>
-</ul>
-</blockquote>
-<h4 id="Create_a_document"><i class="icon-file"></i> Create a document</h4><p>The document panel is accessible using the <i class="icon-folder-open"></i> button in the navigation bar. You can create a new document by clicking <i class="icon-file"></i> <strong>New document</strong> in the document panel.</p>
-<h4 id="Switch_to_another_document"><i class="icon-folder-open"></i> Switch to another document</h4><p>All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.</p>
-<h4 id="Rename_a_document"><i class="icon-pencil"></i> Rename a document</h4><p>You can rename the current document by clicking the document title in the navigation bar.</p>
-<h4 id="Delete_a_document"><i class="icon-trash"></i> Delete a document</h4><p>You can delete the current document by clicking <i class="icon-trash"></i> <strong>Delete document</strong> in the document panel.</p>
-<h4 id="Export_a_document"><i class="icon-hdd"></i> Export a document</h4><p>You can save the current document to a file by clicking <i class="icon-hdd"></i> <strong>Export to disk</strong> from the <i class="icon-provider-stackedit"></i> menu panel.</p>
-<blockquote>
-<p><strong>Tip:</strong> Check out the <a href="#publish-a-document"><i class="icon-upload"></i> Publish a document</a> section for a description of the different output formats.</p>
-</blockquote>
-<hr>
-<h2 id="Synchronization">Synchronization</h2><p>StackEdit can be combined with <i class="icon-provider-gdrive"></i> <strong>Google Drive</strong> and <i class="icon-provider-dropbox"></i> <strong>Dropbox</strong> to have your documents saved in the <em>Cloud</em>. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.</p>
-<blockquote>
-<p><strong>Note:</strong></p>
-<ul>
-<li>Full access to <strong>Google Drive</strong> or <strong>Dropbox</strong> is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.</li>
-<li>Imported documents are downloaded in your browser and are not transmitted to a server.</li>
-<li>If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.</li>
-</ul>
-</blockquote>
-<h4 id="Open_a_document"><i class="icon-refresh"></i> Open a document</h4><p>You can open a document from <i class="icon-provider-gdrive"></i> <strong>Google Drive</strong> or the <i class="icon-provider-dropbox"></i> <strong>Dropbox</strong> by opening the <i class="icon-refresh"></i> <strong>Synchronize</strong> sub-menu and by clicking <strong>Open from…</strong>. Once opened, any modification in your document will be automatically synchronized with the file in your <strong>Google Drive</strong> / <strong>Dropbox</strong> account.</p>
-<h4 id="Save_a_document"><i class="icon-refresh"></i> Save a document</h4><p>You can save any document by opening the <i class="icon-refresh"></i> <strong>Synchronize</strong> sub-menu and by clicking <strong>Save on…</strong>. Even if your document is already synchronized with <strong>Google Drive</strong> or <strong>Dropbox</strong>, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.</p>
-<h4 id="Synchronize_a_document"><i class="icon-refresh"></i> Synchronize a document</h4><p>Once your document is linked to a <i class="icon-provider-gdrive"></i> <strong>Google Drive</strong> or a <i class="icon-provider-dropbox"></i> <strong>Dropbox</strong> file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.</p>
-<p>If you just have modified your document and you want to force the synchronization, click the <i class="icon-refresh"></i> button in the navigation bar.</p>
-<blockquote>
-<p><strong>Note:</strong> The <i class="icon-refresh"></i> button is disabled when you have no document to synchronize.</p>
-</blockquote>
-<h4 id="Manage_document_synchronization"><i class="icon-refresh"></i> Manage document synchronization</h4><p>Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class="icon-refresh"></i> <strong>Manage synchronization</strong> in the <i class="icon-refresh"></i> <strong>Synchronize</strong> sub-menu. This will let you remove synchronization locations that are associated to your document.</p>
-<blockquote>
-<p><strong>Note:</strong> If you delete the file from <strong>Google Drive</strong> or from <strong>Dropbox</strong>, the document will no longer be synchronized with that location.</p>
-</blockquote>
-<hr>
-<h2 id="Publication">Publication</h2><p>Once you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on <strong>Blogger</strong>, <strong>Dropbox</strong>, <strong>Gist</strong>, <strong>GitHub</strong>, <strong>Google Drive</strong>, <strong>Tumblr</strong>, <strong>WordPress</strong> and on any SSH server.</p>
-<h4 id="Publish_a_document"><i class="icon-upload"></i> Publish a document</h4><p>You can publish your document by opening the <i class="icon-upload"></i> <strong>Publish</strong> sub-menu and by choosing a website. In the dialog box, you can choose the publication format:</p>
-<ul>
-<li>Markdown, to publish the Markdown text on a website that can interpret it (<strong>GitHub</strong> for instance),</li>
-<li>HTML, to publish the document converted into HTML (on a blog for example),</li>
-<li>Template, to have a full control of the output.</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong> The default template is a simple webpage wrapping your document in HTML format. You can customize it in the <strong>Advanced</strong> tab of the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
-</blockquote>
-<h4 id="Update_a_publication"><i class="icon-upload"></i> Update a publication</h4><p>After publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class="icon-upload"></i> button in the navigation bar.</p>
-<blockquote>
-<p><strong>Note:</strong> The <i class="icon-upload"></i> button is disabled when your document has not been published yet.</p>
-</blockquote>
-<h4 id="Manage_document_publication"><i class="icon-upload"></i> Manage document publication</h4><p>Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class="icon-upload"></i> <strong>Manage publication</strong> in the <i class="icon-provider-stackedit"></i> menu panel. This will let you remove publication locations that are associated to your document.</p>
-<blockquote>
-<p><strong>Note:</strong> If the file has been removed from the website or the blog, the document will no longer be published on that location.</p>
-</blockquote>
-<hr>
-<h2 id="Markdown_Extra">Markdown Extra</h2><p>StackEdit supports <strong>Markdown Extra</strong>, which extends <strong>Markdown</strong> syntax with some nice features.</p>
-<blockquote>
-<p><strong>Tip:</strong> You can disable any <strong>Markdown Extra</strong> feature in the <strong>Extensions</strong> tab of the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
-<p><strong>Note:</strong> You can find more information about <strong>Markdown</strong> syntax <a href="http://daringfireball.net/projects/markdown/syntax" title="Markdown" target="_blank" rel="external">here</a> and <strong>Markdown Extra</strong> extension <a href="https://github.com/jmcmanus/pagedown-extra" title="Pagedown Extra" target="_blank" rel="external">here</a>.</p>
-</blockquote>
-<h3 id="Tables">Tables</h3><p><strong>Markdown Extra</strong> has a special syntax for tables:</p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Computer</td>
-<td>$1600</td>
-</tr>
-<tr>
-<td>Phone</td>
-<td>$12</td>
-</tr>
-<tr>
-<td>Pipe</td>
-<td>$1</td>
-</tr>
-</tbody>
-</table>
-<p>You can specify column alignment with one or two colons:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Item</th>
-<th style="text-align:right">Value</th>
-<th style="text-align:center">Qty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Computer</td>
-<td style="text-align:right">$1600</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:left">Phone</td>
-<td style="text-align:right">$12</td>
-<td style="text-align:center">12</td>
-</tr>
-<tr>
-<td style="text-align:left">Pipe</td>
-<td style="text-align:right">$1</td>
-<td style="text-align:center">234</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Definition_Lists">Definition Lists</h3><p><strong>Markdown Extra</strong> has a special syntax for definition lists too:</p>
-<p>Term 1<br>Term 2<br>:   Definition A<br>:   Definition B</p>
-<p>Term 3</p>
-<p>:   Definition C</p>
-<p>:   Definition D</p>
-<pre><code>&gt; part <span class="keyword">of</span> <span class="keyword">definition</span> D
-</code></pre><h3 id="Fenced_code_blocks">Fenced code blocks</h3><p>GitHub’s fenced code blocks are also supported with <strong>Highlight.js</strong> syntax highlighting:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Foo&#10;var bar = 0;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Tip:</strong> To use <strong>Prettify</strong> instead of <strong>Highlight.js</strong>, just configure the <strong>Markdown Extra</strong> extension in the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
-<p><strong>Note:</strong> You can find more information:</p>
-<ul>
-<li>about <strong>Prettify</strong> syntax highlighting <a href="https://code.google.com/p/google-code-prettify/" target="_blank" rel="external">here</a>,</li>
-<li>about <strong>Highlight.js</strong> syntax highlighting <a href="http://highlightjs.org/" target="_blank" rel="external">here</a>.</li>
-</ul>
-</blockquote>
-<h3 id="Footnotes">Footnotes</h3><p>You can create footnotes like this[^footnote].</p>
-<p>  [^footnote]: Here is the <em>text</em> of the <strong>footnote</strong>.</p>
-<h3 id="SmartyPants">SmartyPants</h3><p>SmartyPants converts ASCII punctuation characters into “smart” typographic punctuation HTML entities. For example:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th>ASCII</th>
-<th>HTML</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>Single backticks</td>
-<td><code>&#39;Isn&#39;t this fun?&#39;</code></td>
-<td>‘Isn’t this fun?’</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Quotes</td>
-<td><code>&quot;Isn&#39;t this fun?&quot;</code></td>
-<td>“Isn’t this fun?”</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>Dashes</td>
-<td><code>-- is en-dash, --- is em-dash</code></td>
-<td>— is en-dash, —- is em-dash</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="Table_of_contents">Table of contents</h3><p>You can insert a table of contents using the marker <code>[TOC]</code>:</p>
-<p>[TOC]</p>
-<h3 id="MathJax">MathJax</h3><p>You can render <em>LaTeX</em> mathematical expressions using <strong>MathJax</strong>, as on <a href="http://math.stackexchange.com/" target="_blank" rel="external">math.stackexchange.com</a>:</p>
-<p>The <em>Gamma function</em> satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral</p>
-<p>$$<br>\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.<br>$$</p>
-<blockquote>
-<p><strong>Tip:</strong> To make sure mathematical expressions are rendered properly on your website, include <strong>MathJax</strong> into your template:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;script type=&#34;text/javascript&#34; src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&#34;&#62;&#60;/script&#62;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Note:</strong> You can find more information about <strong>LaTeX</strong> mathematical expressions <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="external">here</a>.</p>
-</blockquote>
-<h3 id="UML_diagrams">UML diagrams</h3><p>You can also render sequence diagrams like this:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alice-&#62;Bob: Hello Bob, how are you?&#10;Note right of Bob: Bob thinks&#10;Bob--&#62;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
-<p>And flow charts like this:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Start&#10;e=&#62;end&#10;op=&#62;operation: My Operation&#10;cond=&#62;condition: Yes or No?&#10;&#10;st-&#62;op-&#62;cond&#10;cond(yes)-&#62;e&#10;cond(no)-&#62;op</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>Note:</strong> You can find more information:</p>
-<ul>
-<li>about <strong>Sequence diagrams</strong> syntax <a href="http://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="external">here</a>,</li>
-<li>about <strong>Flow charts</strong> syntax <a href="http://adrai.github.io/flowchart.js/" target="_blank" rel="external">here</a>.</li>
-</ul>
-</blockquote>
-<h3 id="Support_StackEdit">Support StackEdit</h3><p><a href="https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&amp;summary=true" target="_blank" rel="external"><img src="https://cdn.monetizejs.com/resources/button-32.png" alt=""></a></p>
-<p>  [^stackedit]: <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a> is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://allran.github.io/2013/12/17/2013-12-17-first-blog/" data-id="cibufpsnx001fq6ezc209a1ui" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
 
     </footer>
   </div>
@@ -696,7 +626,7 @@ rake preview
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -734,7 +664,7 @@ rake preview
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -746,23 +676,23 @@ rake preview
       <ul>
         
           <li>
+            <a href="/2015/08/06/ejabberd-TLS相关/">ejabberd TLS相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/03/vi编辑相关/">vi编辑相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/30/ftp相关/">ftp相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/Phabricator相关/">Phabricator相关</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/08/ejabberd-debug/">ejabberd debug</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
           </li>
         
       </ul>

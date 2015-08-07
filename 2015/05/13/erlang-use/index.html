@@ -5,21 +5,27 @@
   
   <title>erlang use | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+  <meta name="description" content="安装
+yum安装，见https://www.erlang-solutions.com/downloads/download-erlang-otp
+源码安装1yum install unixODBC-devel.x86_64&amp;#10;yum -y  install openssl-devel.x86_64&amp;#10;yum  -y  install gcc-c++.x86_64&amp;#10;yum ins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="erlang use">
 <meta property="og:url" content="http://allran.github.io/2015/05/13/erlang-use/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+<meta property="og:description" content="安装
+yum安装，见https://www.erlang-solutions.com/downloads/download-erlang-otp
+源码安装1yum install unixODBC-devel.x86_64&amp;#10;yum -y  install openssl-devel.x86_64&amp;#10;yum  -y  install gcc-c++.x86_64&amp;#10;yum ins">
 <meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.30.41.png">
 <meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.49.26.png">
 <meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.53.41.png">
 <meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.50.48.png">
 <meta property="og:image" content="http://allran.github.io/images/2015-05-13 15.56.26.png">
-<meta property="og:updated_time" content="2015-05-21T02:30:17.000Z">
+<meta property="og:updated_time" content="2015-07-30T03:09:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="erlang use">
-<meta name="twitter:description" content="使用erlang自带debug编译erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).">
+<meta name="twitter:description" content="安装
+yum安装，见https://www.erlang-solutions.com/downloads/download-erlang-otp
+源码安装1yum install unixODBC-devel.x86_64&amp;#10;yum -y  install openssl-devel.x86_64&amp;#10;yum  -y  install gcc-c++.x86_64&amp;#10;yum ins">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -97,7 +103,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
+        <h2 id="安装">安装</h2><ol>
+<li>yum安装，见<a href="https://www.erlang-solutions.com/downloads/download-erlang-otp" target="_blank" rel="external">https://www.erlang-solutions.com/downloads/download-erlang-otp</a></li>
+<li>源码安装<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install unixODBC-devel.x86_64&#10;yum -y  install openssl-devel.x86_64&#10;yum  -y  install gcc-c++.x86_64&#10;yum install -y mesa*&#10;yum install -y freeglut*&#10;yum install gcc&#10;yum install gcc-c++&#10;yum install gtk2*&#10;wget https://sourceforge.net/projects/wxwindows/files/3.0.2/wxWidgets-3.0.2.tar.bz2&#10;./configure    --with-opengl --enable-debug --enable-unicode &#10;make &#38; make install&#10;wx-config --version-full  #&#39564;&#35777;wxWidgets&#65306;&#10;3.0.1.0</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="常见错误">常见错误</h2><ol>
+<li>关于“”Can’t set long node name”问题<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@alan download]# erl -name mynode&#10;&#123;error_logger,&#123;&#123;2015,7,29&#125;,&#123;22,52,37&#125;&#125;,&#34;Can&#39;t set long node name!\nPlease check your configuration\n&#34;,[]&#125;&#10;......</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这是因为/etc/hosts配置和自身hostname不一致引起的。<br>比如我的hostname为alan，则在/etc/hosts中添加<br>127.0.0.1    alan.localdomain alan<br>即可</p>
+<h2 id="常用命令">常用命令</h2><p> observer:start().<br> debugger:start().</p>
+<h2 id="使用erlang自带debug编译">使用erlang自带debug编译</h2><p>erlang关于debug编译方式: make:all([debug_info]). | c(test.erl,debug_info).</p>
 <a id="more"></a>
 <h2 id="使用InterlliJ工具debug编译">使用InterlliJ工具debug编译</h2><p>1.使用brew安装rebar，然后使用<a href="https://github.com/haitaoyao/rebar-creator" target="_blank" rel="external">rebar-creator</a>创建项目。</p>
 <p>2.在Preferences-&gt;Tools-&gt;External Tools 里面添加额外的rebar编译命令，如图所示：</p>
@@ -112,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="cibufpsn20008q6ezm0dj1abu" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/05/13/erlang-use/" data-id="cid111tot000ahnezbt4hxybx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +196,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -191,23 +208,23 @@
       <ul>
         
           <li>
+            <a href="/2015/08/06/ejabberd-TLS相关/">ejabberd TLS相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/03/vi编辑相关/">vi编辑相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/30/ftp相关/">ftp相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/Phabricator相关/">Phabricator相关</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/08/ejabberd-debug/">ejabberd debug</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
           </li>
         
       </ul>

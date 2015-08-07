@@ -3,21 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ejabberd install | 木头人</title>
+  <title>vi编辑相关 | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ejabberd_15.04 在 mac os系统下的安装详解
-参考官方文档http://docs.ejabberd.im/developer/install-osx/">
+  <meta name="description" content="一，文字的粘贴复制与移动删除
+　　1&amp;gt;,粘贴与复制
+　　　　——————————————-基本操作——————————————————————————
+　　　　在命令模式下，以光标所在位置为参考
+　　　　复制n个字符　　—　　nyl
+　　　　复制n个字　　   —　　nyw
+　　　　复制n行　　      —　　nyy
+　　　　粘贴出复制的内容　　—　　p
+　　　　—————————————">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ejabberd install">
-<meta property="og:url" content="http://allran.github.io/2015/04/15/ejabberd-install/index.html">
+<meta property="og:title" content="vi编辑相关">
+<meta property="og:url" content="http://allran.github.io/2015/08/03/vi编辑相关/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="ejabberd_15.04 在 mac os系统下的安装详解
-参考官方文档http://docs.ejabberd.im/developer/install-osx/">
-<meta property="og:updated_time" content="2015-07-27T03:29:20.000Z">
+<meta property="og:description" content="一，文字的粘贴复制与移动删除
+　　1&amp;gt;,粘贴与复制
+　　　　——————————————-基本操作——————————————————————————
+　　　　在命令模式下，以光标所在位置为参考
+　　　　复制n个字符　　—　　nyl
+　　　　复制n个字　　   —　　nyw
+　　　　复制n行　　      —　　nyy
+　　　　粘贴出复制的内容　　—　　p
+　　　　—————————————">
+<meta property="og:updated_time" content="2015-08-03T03:43:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ejabberd install">
-<meta name="twitter:description" content="ejabberd_15.04 在 mac os系统下的安装详解
-参考官方文档http://docs.ejabberd.im/developer/install-osx/">
+<meta name="twitter:title" content="vi编辑相关">
+<meta name="twitter:description" content="一，文字的粘贴复制与移动删除
+　　1&amp;gt;,粘贴与复制
+　　　　——————————————-基本操作——————————————————————————
+　　　　在命令模式下，以光标所在位置为参考
+　　　　复制n个字符　　—　　nyl
+　　　　复制n个字　　   —　　nyw
+　　　　复制n行　　      —　　nyy
+　　　　粘贴出复制的内容　　—　　p
+　　　　—————————————">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -69,16 +90,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ejabberd-install" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vi编辑相关" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/04/15/ejabberd-install/" class="article-date">
-  <time datetime="2015-04-15T07:28:47.000Z" itemprop="datePublished">2015-04-15</time>
+    <a href="/2015/08/03/vi编辑相关/" class="article-date">
+  <time datetime="2015-08-03T03:41:07.000Z" itemprop="datePublished">2015-08-03</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/erlang/">erlang</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -87,7 +104,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ejabberd install
+      vi编辑相关
     </h1>
   
 
@@ -95,88 +112,110 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>ejabberd_15.04 在 mac os系统下的安装详解</p>
-<p>参考官方文档<br><a href="http://docs.ejabberd.im/developer/install-osx/" target="_blank" rel="external">http://docs.ejabberd.im/developer/install-osx/</a></p>
-<a id="more"></a>
-<p>1.安装依赖</p>
-<pre><code>brew <span class="keyword">install</span> m4
-brew <span class="keyword">install</span> autoconf
-brew <span class="keyword">install</span> automake 
-brew <span class="keyword">install</span> libtool
-brew <span class="keyword">install</span> pkg-config
-brew <span class="keyword">install</span> libyaml-dev
-</code></pre><p>2.配置&amp;安装</p>
-<pre><code>cd <span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart/ejabberd 
-chmod +x autogen.sh 
-./autogen.sh  
-.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-mysql        <span class="comment">//附加mysql</span>
-.<span class="regexp">/configure --prefix=/</span>Users<span class="regexp">/allran/</span>SDK<span class="regexp">/chart/</span>my-ejabberd --enable-all     <span class="comment">//附加所有</span>
-./rebar get-deps
-./rebar compile
-make &amp; make install
-</code></pre><p>注：如果安装失败，清除掉痕迹: make distclean</p>
-<p>3.启动</p>
-<pre><code><span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl start        /</span>/启动
-<span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl status        /</span>/查看状态
-<span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl live        /</span>/查看编译状态
-</code></pre><p>4.配置<br>配置ejabberd支持mysql<br>添加mysql用户以及数据库</p>
-<pre><code><span class="attribute">mysql</span>:&gt; create database ejabberd
-<span class="attribute">mysql</span>:&gt; grant all privileges on ejabberd.* to ejabberd<span class="variable">@127</span>.<span class="number">0.0</span>.<span class="number">1</span> IDENTIFIED BY <span class="string">'ejabberd'</span>
-<span class="attribute">mysql</span>:&gt; grant all privileges on ejabberd.* to ejabberd<span class="variable">@localhost</span> IDENTIFIED BY <span class="string">'ejabberd'</span>
-<span class="attribute">mysql</span>:&gt; flush privileges; 
-<span class="attribute">mysql</span>:&gt; use ejabberd  
-<span class="attribute">mysql</span>:&gt;source /usr/allran/SDK/ejabberd/sql/mysql.sql;
-</code></pre><p>修改ejabberd.yml文件如下：<br>注释掉：  auth_method: internal.<br>取消注释：auth_method: odbc.<br>取消注释并设置数据库名称和密码: (我的数据库帐号密码都是ejabberd) </p>
-<pre><code><span class="attribute">odbc_type</span>: <span class="string">mysql</span>
-<span class="attribute">odbc_server</span>: <span class="string">"localhost"</span>
-<span class="attribute">odbc_database</span>: <span class="string">"ejabberd"</span>
-<span class="attribute">odbc_username</span>: <span class="string">"ejabberd"</span>
-<span class="attribute">odbc_password</span>: <span class="string">"ejabberd"</span>
-</code></pre><p>5.新建帐号</p>
-<pre><code><span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl register allran localhost 123456</span>
-</code></pre><p>然后编辑ejabberd.yml文件</p>
-<pre><code><span class="attribute">acl</span>:
-  <span class="attribute">admin</span>:
-    <span class="attribute">user</span>:
-      - <span class="string">"allran"</span>: <span class="string">"localhost"</span>
-<span class="attribute">access</span>:
-  <span class="attribute">configure</span>:
-    <span class="attribute">admin</span>: allow
-</code></pre><p>然后重起服务</p>
-<pre><code><span class="regexp">/Users/</span>allran<span class="regexp">/SDK/</span>chart<span class="regexp">/my-ejabberd/</span>sbin<span class="regexp">/ejabberdctl restart</span>
-</code></pre><p>打开管理后台<a href="http://localhost:5280/admin/" target="_blank" rel="external">http://localhost:5280/admin/</a><br>用户名:allran  密码:123456</p>
-<h2 id="关于在centos安装注意">关于在centos安装注意</h2><ol>
-<li>sh: line 0: exec: c++: not found 错误，用”yum install gcc-c++”解决。</li>
-</ol>
+        <p>一，文字的粘贴复制与移动删除</p>
+<p>　　1&gt;,粘贴与复制</p>
+<p>　　　　——————————————-基本操作——————————————————————————</p>
+<p>　　　　在命令模式下，以光标所在位置为参考</p>
+<p>　　　　复制n个字符　　—　　nyl</p>
+<p>　　　　复制n个字　　   —　　nyw</p>
+<p>　　　　复制n行　　      —　　nyy</p>
+<p>　　　　粘贴出复制的内容　　—　　p</p>
+<p>　　　　——————————————-寄存器相关—————————————————————————-</p>
+<p>　　　　复制n行到寄存器？　　　　—　　？nyy</p>
+<p>　　　　复制n个字到寄存器？　　　—　　？nyw</p>
+<p>　　　　复制n个字符到寄存器？　　—　　？nyl</p>
+<p>　　　　粘贴出寄存器？中的内容　　  —　　？p</p>
+<p>　　　　（注，？为寄存器名字，用字母表示）</p>
+<p>　　　　例，h10yy 复制10行到寄存器h，hp 将寄存器h中的内容粘贴到光标处。</p>
+<p>　　　　——————————————VISUAL模式下复制选中内容———————————————————</p>
+<p>　　　　在命令模式下按‘V’进入VISUAL模式，方向键移动光标选中任何内容后</p>
+<p>　　　　y 复制</p>
+<p>　　　　d 剪切<br>然后再命令模式下 p 粘贴到指定位置</p>
+<p>　　　　</p>
+<p>　　　　——————————————复制内容到指定行———————————————————————-</p>
+<p>　　　　复制n1n2行间的内容到n3行　　—　　:n1,n2 co n3</p>
+<p>　　　　</p>
+<p>　　2&gt;,移动</p>
+<p>　　　　移动n1n2行间的内容到n3行　　—　　:n1,n2 m n3</p>
+<p>　　3&gt;,删除</p>
+<p>　　　　在命令模式下，以光标所在位置为参考</p>
+<p>　　　　删除一个字　—　　dw</p>
+<p>　　　　删除一字节   —　　dl</p>
+<p>　　　　删除一字符   —　　x</p>
+<p>　　　　删除一行　　—　　dd</p>
+<p>　　　　删除 n行　　—　　ndd</p>
+<p>　　　　删除n1到n2之间的内容（包括n1,n2）　　—　　:n1,n2 d　　　</p>
+<p>　　　　注，ndd删除n行时，删除的内容放到了1号寄存器中，可以使用命令 1p 将删除的内容粘贴出来。　</p>
+<p>二，字符查找与替换</p>
+<p>　　搜索———————————————————————————————————————————-</p>
+<p>　　　　向后搜索　　—　　/pattern</p>
+<p>　　　　向前搜索　　—　　?pattern</p>
+<p>　　　　搜索与光标所在字符串相同的字符串　　—   *</p>
+<p>　　　　pattern为匹配模式，可以为正则表达式。</p>
+<p>　　　　n 查找下一个，N查找上一个。</p>
+<p>　　替换————————————————————————————————————————————</p>
+<p>　　　　:s/p1/p2/　　  　　—当前行的第一个p1替换为p2</p>
+<p>　　　　:s/p1/p2/g　　　　—当前行的所有p1替换为p2</p>
+<p>　　　　:%s/p1/p2/g　　　—每一行的所有p1替换为p2</p>
+<p>　　　　:n1,n2s/p1/p2/g   —n1，n2行之间的p1替换为p2</p>
+<p>　　　　:n:$s/p1/p2/g　　 —从第n行到最后一行的所有p1替换为p2</p>
+<p>　　</p>
+<p>三，光标转跳与翻页</p>
+<p>　　在命令模式下，</p>
+<p>　　转跳到行首　　—　　gg</p>
+<p>　　跳转到第n行　　—　　:n</p>
+<p>　　转跳到最后一行  —　　:$</p>
+<p>　　转跳到与光标所在括号相匹配的反括号　　—　　%</p>
+<p>　　转跳到光标所在行的行末　　　　　　　　—　　$</p>
+<p>　　前翻半屏　　— ctrl + u</p>
+<p>　　后翻半屏　　— ctrl + d<br>　　整页翻页 ctrl-f ctrl-b<br>f就是forword b就是backward</p>
+<p>翻半页<br>ctrl-d ctlr-u<br>d=down u=up</p>
+<p>滚一行<br>ctrl-e ctrl-y</p>
+<p>zz 让光标所杂的行居屏幕中央<br>zt 让光标所杂的行居屏幕最上一行 t=top<br>zb 让光标所杂的行居屏幕最下一行 b=bottom</p>
+<p>　　打开文件并定位到第n行　　—　　vi path/file +n</p>
+<p>四，多文件编辑</p>
+<p>　  vi file1 file2 在一个视窗中打开两个文件</p>
+<p>　　:n 显示下一个文件，:N显示上一个文件。</p>
+<p>　　  CWW=ctrl+w+w<br>　　<br>　　  当切换到ToolBar时，可以按TAB键在不同文件上切换，并按ENTER可以选择进入。</p>
+<p> 　　vi file 在视窗中打开一个文件</p>
+<p> 　　:sp file2</p>
+<p>　　 :vsp file2<br>　　<br>　　 　可以使用CWW命令在文件间切换，或者使用CW+k ,CW+j ,CW+h ,CW+l 切换到当前文件的上、下、左、右方向的文件窗口。</p>
+<p>五，常用命令</p>
+<p>　　FF 查看光标所在的函数</p>
+<p>　　:set nu 　　　—显示行号</p>
+<p>　　:set nonu　　—不显示行号</p>
+<p>　　:set nohls　　—退出搜索标记</p>
+<p>　　:set hls　　　 —添加搜索标记</p>
+<p>　　:ls　　　　　　—查看当前缓冲区里的文件</p>
+<p>　　V　　　　　　 —进入行块选择模式</p>
+<p>　　ctrl+V　　　　—进入列块选择模式</p>
+<p>　　esc　　　　　 —进入命令模式</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/04/15/ejabberd-install/" data-id="cid111tow000dhnezsaofyxdg" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/08/03/vi编辑相关/" data-id="cid111tom0003hnezam5c36uy" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ejabberd/">ejabberd</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/04/16/ejabberd-Modules-development/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/06/ejabberd-TLS相关/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ejabberd Modules development
+          ejabberd TLS相关
         
       </div>
     </a>
   
   
-    <a href="/2015/04/07/2015-04-07-rebar/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/30/ftp相关/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">rebar相关</div>
+      <div class="article-nav-title">ftp相关</div>
     </a>
   
 </nav>

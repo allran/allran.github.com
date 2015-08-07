@@ -5,16 +5,61 @@
   
   <title>Mysql相关 | 木头人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
+  <meta name="description" content="mysql安装配置1、安装
+查看有没有安装过：
+yum list installed mysql*
+
+rpm -qa | grep mysql*
+查看有没有安装包：
+yum list mysql*
+安装mysql客户端：
+yum install mysql
+安装mysql 服务器端：
+yum install mysql-server
+
+
+
+yum install mysql-devel
+2、启动&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql相关">
 <meta property="og:url" content="http://allran.github.io/2015/07/06/Mysql相关/index.html">
 <meta property="og:site_name" content="木头人">
-<meta property="og:description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
-<meta property="og:updated_time" content="2015-07-07T05:52:40.000Z">
+<meta property="og:description" content="mysql安装配置1、安装
+查看有没有安装过：
+yum list installed mysql*
+
+rpm -qa | grep mysql*
+查看有没有安装包：
+yum list mysql*
+安装mysql客户端：
+yum install mysql
+安装mysql 服务器端：
+yum install mysql-server
+
+
+
+yum install mysql-devel
+2、启动&amp;">
+<meta property="og:updated_time" content="2015-07-30T03:52:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql相关">
-<meta name="twitter:description" content="linux下mysql的root密码忘记解决方法1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全状态。最安全的状态是到服务器的Co">
+<meta name="twitter:description" content="mysql安装配置1、安装
+查看有没有安装过：
+yum list installed mysql*
+
+rpm -qa | grep mysql*
+查看有没有安装包：
+yum list mysql*
+安装mysql客户端：
+yum install mysql
+安装mysql 服务器端：
+yum install mysql-server
+
+
+
+yum install mysql-devel
+2、启动&amp;">
   
     <link rel="alternative" href="/atom.xml" title="木头人" type="application/atom+xml">
   
@@ -88,7 +133,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="linux下mysql的root密码忘记解决方法">linux下mysql的root密码忘记解决方法</h2><p>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。<br>因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的<br>状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对<br>外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全<br>状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。</p>
+        <h2 id="mysql安装配置">mysql安装配置</h2><p>1、安装</p>
+<p>查看有没有安装过：</p>
+<pre><code>yum <span class="keyword">list</span> installed mysql*
+
+rpm -<span class="keyword">qa</span> | <span class="keyword">grep</span> mysql*
+</code></pre><p>查看有没有安装包：</p>
+<pre><code>yum <span class="type">list</span> mysql*
+</code></pre><p>安装mysql客户端：</p>
+<pre><code>yum <span class="keyword">install</span> mysql
+</code></pre><p>安装mysql 服务器端：</p>
+<pre><code>yum <span class="operator"><span class="keyword">install</span> mysql-<span class="keyword">server</span>
+
+
+
+yum <span class="keyword">install</span> mysql-devel</span>
+</code></pre><p>2、启动&amp;&amp;停止</p>
+<p>数据库字符集设置</p>
+<pre><code>mysql配置文件/etc/<span class="keyword">my</span>.cnf中加入default-<span class="property">character</span>-<span class="keyword">set</span>=utf8
+</code></pre><p>启动mysql服务：</p>
+<pre><code><span class="keyword">service</span> mysqld <span class="literal">start</span>或者/etc/init.d/mysqld <span class="literal">start</span>
+</code></pre><p>开机启动：</p>
+<pre><code>chkconfig -<span class="built_in">add</span> mysqld，查看开机启动设置是否成功chkconfig <span class="comment">--list | grep mysql*</span>
+
+
+
+mysqld             <span class="number">0</span>:关闭    <span class="number">1</span>:关闭    <span class="number">2</span>:启用    <span class="number">3</span>:启用    <span class="number">4</span>:启用    <span class="number">5</span>:启用    <span class="number">6</span>:关闭
+</code></pre><p>停止：</p>
+<pre><code><span class="keyword">service</span> mysqld <span class="literal">stop</span>
+</code></pre><p>3、登录</p>
+<p>创建root管理员：</p>
+<pre><code>mysqladmin -u <span class="literal">root</span> <span class="literal">password</span> <span class="number">123456</span>
+</code></pre><p>登录：</p>
+<pre><code><span class="title">mysql</span> -u root -p输入密码即可。
+</code></pre><p>忘记密码：</p>
+<pre><code>service mysqld <span class="operator"><span class="keyword">stop</span>
+
+
+
+mysqld_safe <span class="comment">--user=root --skip-grant-tables</span>
+
+
+
+mysql -u root
+
+
+
+<span class="keyword">use</span> mysql
+
+
+
+<span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">password</span>=<span class="keyword">password</span>(<span class="string">"new_pass"</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">"root"</span>;</span>
+
+
+
+<span class="operator"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span>  
+</code></pre><p>4、远程访问</p>
+<p>开放防火墙的端口号</p>
+<p>mysql增加权限：mysql库中的user表新增一条记录host为“%”，user为“root”。</p>
+<p>5、Linux MySQL的几个重要目录</p>
+<p>数据库目录</p>
+<pre><code><span class="regexp">/var/</span>lib<span class="regexp">/mysql/</span>
+</code></pre><p>配置文件</p>
+<pre><code>/usr/share /mysql（mysql.<span class="keyword">server</span>命令及配置文件）
+</code></pre><p>相关命令</p>
+<pre><code><span class="regexp">/usr/</span>bin（mysqladmin mysqldump等命令）
+</code></pre><p>启动脚本</p>
+<pre><code><span class="regexp">/etc/</span>rc.d<span class="regexp">/init.d/</span>（启动脚本文件mysql的目录） 
+</code></pre><h2 id="linux下mysql的root密码忘记解决方法">linux下mysql的root密码忘记解决方法</h2><p>1．首先确认服务器出于安全的状态，也就是没有人能够任意地连接MySQL数据库。<br>因为在重新设置MySQL的root密码的期间，MySQL数据库完全出于没有密码保护的<br>状态下，其他的用户也可以任意地登录和修改MySQL的信息。可以采用将MySQL对<br>外的端口封闭，并且停止Apache以及所有的用户进程的方法实现服务器的准安全<br>状态。最安全的状态是到服务器的Console上面操作，并且拔掉网线。</p>
 <a id="more"></a>
 <p>2．修改MySQL的登录设置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br></pre></td></tr></table></figure></p>
 <p>在[mysqld]的段中加上一句：skip-grant-tables<br>例如：<br>[mysqld]<br>datadir=/var/lib/mysql<br>socket=/var/lib/mysql/mysql.sock<br>skip-grant-tables<br>保存并且退出vi。 </p>
@@ -101,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://allran.github.io/2015/07/06/Mysql相关/" data-id="cibufpsnc000mq6ez7hs9t10h" class="article-share-link">Share</a>
+      <a data-url="http://allran.github.io/2015/07/06/Mysql相关/" data-id="cid111tp8000qhnez1cv2sm5z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,7 +280,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -180,23 +292,23 @@
       <ul>
         
           <li>
+            <a href="/2015/08/06/ejabberd-TLS相关/">ejabberd TLS相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/03/vi编辑相关/">vi编辑相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/30/ftp相关/">ftp相关</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/14/Phabricator相关/">Phabricator相关</a>
+          </li>
+        
+          <li>
             <a href="/2015/07/08/ejabberd-debug/">ejabberd debug</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/07/linux常用命令/">linux常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/06/Mysql相关/">Mysql相关</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/关于Markdown/">关于Markdown</a>
-          </li>
-        
-          <li>
-            <a href="/2015/06/08/基于Erlang-OTP构建一个TCP服务器/">基于Erlang OTP构建一个TCP服务器</a>
           </li>
         
       </ul>
